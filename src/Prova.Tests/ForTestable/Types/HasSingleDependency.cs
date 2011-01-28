@@ -4,6 +4,9 @@
     {
         public readonly IDependency Dependency;
 
-        public HasSingleDependency(IDependency dependency) { Dependency = dependency; }
+        public HasSingleDependency(IDependency dependency)
+        {
+            Dependency = dependency;
+        }
     }
 }

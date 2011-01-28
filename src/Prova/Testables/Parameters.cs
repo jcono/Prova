@@ -18,12 +18,12 @@ namespace Prova.Testables
         {
             return _parameters.Any(x => x.IsAssignableFrom(type));
         }
-//
-//        public IEnumerable<dynamic> BuildInstancesUsing(Dependencies dependencies)
-//        {
-//            return _parameters.Select(dependencies.InstanceForType);
-//        }
-//
+
+        public IEnumerable<dynamic> BuildInstancesUsing(Dependencies dependencies)
+        {
+            return _parameters.Select(dependencies.InstanceForType);
+        }
+
         private static IEnumerable<Type> SelectAll(IEnumerable<ParameterInfo> parametersInformation, Func<ParameterInfo, Type> selector)
         {
             return parametersInformation.Select(selector);

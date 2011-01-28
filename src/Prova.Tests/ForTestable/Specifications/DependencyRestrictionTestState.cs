@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Prova.Extensions;
 using Prova.Tests.ForTestable.Types;
 
-namespace Prova.Tests.ForTestable
+namespace Prova.Tests.ForTestable.Specifications
 {
     public class DependencyRestrictionTestState
     {

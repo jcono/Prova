@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using Prova.Extensions;
+using Prova.Resources;
 
 namespace Prova.Testables
 {
@@ -16,15 +17,15 @@ namespace Prova.Testables
 
         public ConstructorInfo Find()
         {
-//            if (_type.IsAbstract)
-//            {
-//                throw new ArgumentException(string.Format(ExceptionMessages.CanNotBeAnAbstractClass, _type.Name));
-//            }
-            var constructors = _type.GetConstructors();//.Where(ParameterTypesAreUnique);
-//            if (!constructors.HasCountOf(1))
-//            {
-//                throw new ArgumentException(string.Format(ExceptionMessages.MustHaveValidConstructor, _type.Name));
-//            }
+            if (_type.IsAbstract)
+            {
+                throw new ArgumentException(string.Format(ExceptionMessages.CanNotBeAnAbstractClass, _type.Name));
+            }
+            var constructors = _type.GetConstructors().Where(ParameterTypesAreUnique);
+            if (!constructors.HasCountOf(1))
+            {
+                throw new ArgumentException(string.Format(ExceptionMessages.MustHaveValidConstructor, _type.Name));
+            }
             return constructors.Single();
         }
 

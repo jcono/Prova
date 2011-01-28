@@ -1,9 +1,8 @@
 ﻿using System;
 using NUnit.Framework;
-using Prova.Specifications;
 using Prova.Tests.ForTestable.Types;
 
-namespace Prova.Tests.ForTestable
+namespace Prova.Tests.ForTestable.Specifications
 {
     [TestFixture]
     public class DependencyRestrictionTests : Specification<DependencyRestrictionTestState>
@@ -11,10 +10,8 @@ namespace Prova.Tests.ForTestable
         [Test]
         public void ShouldNotBeAbleToProvideDependencyThatCanNotBeInjected()
         {
-            var unusedDependency = new UnusedDependency();
-
             Given(I.HaveATestableObject)
-                .When(I.TellTheObjectToUse(unusedDependency))
+                .When(I.TellTheObjectToUse(new UnusedDependency()))
                 .And(I.LookForAnExceptionWith(typeof(ArgumentException)))
                 .Then(I.ShouldHaveSeenThatException);
         }
