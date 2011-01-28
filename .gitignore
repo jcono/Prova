@@ -1,0 +1,7 @@
+*obj*
+*bin*
+*.csproj*
+*[R|r]e[S|s]harper*
+*.suo
+_cache
+_cache\*
