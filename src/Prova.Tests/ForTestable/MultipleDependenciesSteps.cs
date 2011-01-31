@@ -7,7 +7,7 @@ using TechTalk.SpecFlow;
 namespace Prova.Tests.ForTestable
 {
     [Binding]
-    [StepScope(Tag = "Multiple_Dependencies")]
+    [StepScope(Feature = "Can automatically provide different ways of obtaining dependencies for a type with multiple dependencies")]
     public class MultipleDependenciesSteps
     {
         private Testable _testable;
@@ -19,7 +19,7 @@ namespace Prova.Tests.ForTestable
             Testable.InstancesOf(typeof(HasMultipleDependencies)).UsesDefault(() => new DefaultDependency());
         }
 
-        [Given(@"I have a testable (.*)")]
+        [Given(@"I have a testable with a (.*)")]
         public void GivenIHaveATestable(Type type)
         {
             _testable = new Testable(type);

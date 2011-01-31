@@ -6,7 +6,7 @@
 @Multiple_Dependencies
 Scenario: Support multiple different ways of obtaining dependencies
 	Given I specify that testable instances use a default dependency
-	And I have a testable HasMultipleDependencies
+	And I have a testable with a type of HasMultipleDependencies
     And I use an explicit dependency
 	When I use the testable object
     Then I should have a default dependency

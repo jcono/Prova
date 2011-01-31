@@ -67,7 +67,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
  testRunner.Given("I specify that testable instances use a default dependency");
 #line 9
- testRunner.And("I have a testable HasMultipleDependencies");
+ testRunner.And("I have a testable with a type of HasMultipleDependencies");
 #line 10
     testRunner.And("I use an explicit dependency");
 #line 11

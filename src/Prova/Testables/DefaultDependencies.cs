@@ -22,6 +22,11 @@ namespace Prova.Testables
             }
         }
 
+        public void DoNotUseDefaults()
+        {
+            _defaults.Clear();
+        }
+
         internal dynamic For(Type type)
         {
             return ValueFor(TheKey(ThatIsAssignableFrom(type)));

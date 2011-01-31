@@ -6,7 +6,7 @@ using TechTalk.SpecFlow;
 namespace Prova.Tests.ForTestable
 {
     [Binding]
-    [StepScope(Tag = "Single_Dependency")]
+    [StepScope(Feature = "Can provide different ways of supplying a dependency to a class with a single dependency")]
     public class SingleDependencySteps
     {
         private Testable _testable;
@@ -21,13 +21,13 @@ namespace Prova.Tests.ForTestable
             Testable.InstancesOf(typeof(HasSingleDependency)).UsesDefault(() => new Dependency());
         }
 
-        [Given(@"I have a testable (.*)")]
+        [Given(@"I have a testable with a (.*)")]
         public void HaveTestable(Type type)
         {
             _testable = new Testable(type);
         }
-        
-        [Given(@"I have another testable (.*)")]
+
+        [Given(@"I have another testable with a (.*)")]
         public void HaveAnotherTestable(Type type)
         {
             _secondTestable = new Testable(type);
@@ -52,7 +52,7 @@ namespace Prova.Tests.ForTestable
             _testable.With(_explicitDependency);
         }
 
-        [Then(@"I should have a dependency of type (.*)")]
+        [Then(@"I should have a dependency with a (.*)")]
         public void ShouldHaveDependencyOf(Type expectedType)
         {
             Assert.That(_instance.Dependency, Is.InstanceOf(expectedType));

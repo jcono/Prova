@@ -6,6 +6,12 @@ namespace Prova.Tests.ForTestable.Specifications
     [TestFixture]
     public class SingleDependencyTests : Specification<SingleDependencyTestsState>
     {
+        [SetUp]
+        public void SetUp()
+        {
+            Testable.InstancesOf(typeof(HasSingleDependency)).DoNotUseDefaults();
+        }
+
         [Test]
         public void ShouldBeAbleToGetADependencyImplicitlyFromTheLoadedAssemblies()
         {
