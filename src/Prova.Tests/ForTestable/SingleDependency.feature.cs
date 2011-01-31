@@ -17,9 +17,8 @@ namespace Prova.Tests.ForTestable
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Can provide different ways of supplying a dependency to a class with a single dep" +
-        "endency")]
-    public partial class CanProvideDifferentWaysOfSupplyingADependencyToAClassWithASingleDependencyFeature
+    [NUnit.Framework.DescriptionAttribute("Can provide different ways of supplying a dependency to a class")]
+    public partial class CanProvideDifferentWaysOfSupplyingADependencyToAClassFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,8 +30,7 @@ namespace Prova.Tests.ForTestable
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Can provide different ways of supplying a dependency to a class with a single dep" +
-                    "endency", "In order to be able to use testable objects\nAs a developer\nI want to be able to s" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Can provide different ways of supplying a dependency to a class", "In order to be able to use testable objects\nAs a developer\nI want to be able to s" +
                     "upply different types of dependencies", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -109,7 +107,24 @@ this.ScenarioSetup(scenarioInfo);
 #line 22
  testRunner.And("I use the other testable object");
 #line 23
- testRunner.Then("The two instances should have different dependencies");
+ testRunner.Then("I should have two instances with different dependencies");
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Should not be able to provide a dependency that is not used")]
+        public virtual void ShouldNotBeAbleToProvideADependencyThatIsNotUsed()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should not be able to provide a dependency that is not used", ((string[])(null)));
+#line 25
+this.ScenarioSetup(scenarioInfo);
+#line 26
+ testRunner.Given("I have a testable with a type of HasSingleDependency");
+#line 27
+ testRunner.When("I tell the object to use a dependency it does not have");
+#line 28
+ testRunner.Then("I should have seen an exception with type of ArgumentException");
 #line hidden
             testRunner.CollectScenarioErrors();
         }

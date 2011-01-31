@@ -1,12 +1,13 @@
 using System;
 using NUnit.Framework;
+using Prova.Extensions;
 using Prova.Tests.ForTestable.Types;
 using TechTalk.SpecFlow;
 
 namespace Prova.Tests.ForTestable
 {
     [Binding]
-    [StepScope(Feature = "Can provide different ways of supplying a dependency to a class with a single dependency")]
+    [StepScope(Feature = "Can provide different ways of supplying a dependency to a class")]
     public class SingleDependencySteps
     {
         private Testable _testable;
@@ -14,6 +15,7 @@ namespace Prova.Tests.ForTestable
         private HasSingleDependency _instance;
         private HasSingleDependency _secondInstance;
         private IDependency _explicitDependency;
+        private Exception _exception;
 
         [Given(@"I want to use a default dependency")]
         public void WantToUseADefaultDependency()
@@ -42,7 +44,7 @@ namespace Prova.Tests.ForTestable
         [When(@"I use the other testable object")]
         public void UseTheOtherTestableObject()
         {
-            _secondInstance = _secondTestable.Create();            
+            _secondInstance = _secondTestable.Create();
         }
 
         [When(@"I tell the testable object to use an explicit dependency")]
@@ -50,6 +52,13 @@ namespace Prova.Tests.ForTestable
         {
             _explicitDependency = new StubDependency();
             _testable.With(_explicitDependency);
+        }
+
+        [When(@"I tell the object to use a dependency it does not have")]
+        public void WhenITellTheObjectToUseDependencyItDoesNotHave()
+        {
+            Action action = () => _testable.With(new UnusedDependency());
+            _exception = action.GetException();
         }
 
         [Then(@"I should have a dependency with a (.*)")]
@@ -64,11 +73,16 @@ namespace Prova.Tests.ForTestable
             Assert.That(_instance.Dependency, Is.EqualTo(_explicitDependency));
         }
 
-        [Then(@"The two instances should have different dependencies")]
-        public void TheTwoInstancesShouldHaveDifferentDependencies()
+        [Then(@"I should have two instances with different dependencies")]
+        public void ShouldHaveTwoInstancesWithDifferentDependencies()
         {
             Assert.That(_instance.Dependency, Is.Not.EqualTo(_secondInstance.Dependency));
         }
 
+        [Then(@"I should have seen an exception with (.*)")]
+        public void ShouldHaveSeenAn(Type expectedExceptionType)
+        {
+            Assert.That(_exception, Is.InstanceOf(expectedExceptionType));
+        }
     }
 }

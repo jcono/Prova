@@ -1,4 +1,4 @@
-﻿Feature: Can provide different ways of supplying a dependency to a class with a single dependency
+﻿Feature: Can provide different ways of supplying a dependency to a class
 	In order to be able to use testable objects
 	As a developer
 	I want to be able to supply different types of dependencies
@@ -20,4 +20,9 @@ Scenario: Specify a default dependency to use on all testable instances
 	And I have another testable with a type of HasSingleDependency
 	When I use the testable object
 	And I use the other testable object
-	Then The two instances should have different dependencies
+	Then I should have two instances with different dependencies
+
+Scenario: Should not be able to provide a dependency that is not used
+	Given I have a testable with a type of HasSingleDependency
+	When I tell the object to use a dependency it does not have
+	Then I should have seen an exception with type of ArgumentException
