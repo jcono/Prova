@@ -1,51 +1,64 @@
-﻿using Prova.Tests.ForTestable.Types;
+﻿using System;
+using NUnit.Framework;
+using Prova.Tests.ForTestable.Types;
+using Rhino.Mocks;
 using TechTalk.SpecFlow;
 
 namespace Prova.Tests.ForTestable
 {
     [Binding]
+    [StepScope(Tag = "Multiple_Dependencies")]
     public class MultipleDependenciesStepDefinitions
     {
-        [Given(@"I specify a default dependency to use")]
-        public void GivenISpecifyADefaultDependencyToUse()
+        private Testable _testable;
+        private HasMultipleDependencies _instance;
+
+        [Given(@"I specify that testable instances use a default dependency")]
+        public void GivenISpecifyThatInstancesUseDefaultDependency()
         {
             Testable.InstanceOf(typeof(HasMultipleDependencies)).UsesDefault(() => new DefaultDependency());
         }
 
-        [Given(@"I use a dependency ExplicitDependency")]
-        public void GivenIUseADependencyExplicitDependency()
+        [Given(@"I have a testable (.*)")]
+        public void GivenIHaveATestable(Type type)
         {
-            ScenarioContext.Current.Pending();
+            _testable = new Testable(type);
+        }
+
+        [Given(@"I use an explicit dependency")]
+        public void GivenIUseAnExplicitDependency()
+        {
+            _testable.With(new ExplicitDependency());
         }
 
         [When(@"I use the testable object")]
         public void WhenIUseTheTestableObject()
         {
-            ScenarioContext.Current.Pending();
+            _instance = _testable.Create();
         }
 
-        [Then(@"I should have a default dependency with the correct type")]
-        public void ThenIShouldHaveADefaultDependencyWithTheCorrectType()
+        [Then(@"I should have a default dependency")]
+        public void ThenIShouldHaveADefaultDependency()
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(_instance.ShouldBeDefault, Is.InstanceOf(typeof(DefaultDependency)));
         }
 
         [Then(@"I should have an explicit dependency")]
         public void ThenIShouldHaveAnExplicitDependency()
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(_instance.ShouldBeExplicit, Is.InstanceOf(typeof(ExplicitDependency)));
         }
 
         [Then(@"I should have a canned dependency")]
         public void ThenIShouldHaveACannedDependency()
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(_instance.ShouldBeImplicit, Is.InstanceOf(typeof(CannedImplicityDependency)));
         }
 
         [Then(@"I should have a mocked dependency")]
         public void ThenIShouldHaveAMockedDependency()
         {
-            ScenarioContext.Current.Pending();
+            Assert.That(_instance.ShouldBeMocked, Is.InstanceOf(MockRepository.GenerateStub<IMockedDependency>().GetType()));
         }
     }
 }

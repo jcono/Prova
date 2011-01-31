@@ -7,13 +7,14 @@ using TechTalk.SpecFlow;
 namespace Prova.Tests.ForTestable
 {
     [Binding]
+    [StepScope(Tag = "Invalid_Dependencies")]
     public class InvalidDependenciesStepDefinitions
     {
         private Testable _testable;
         private Exception _exception;
 
-        [Given(@"I have a testable object")]
-        public void GivenIHaveATestableObject(Type type)
+        [Given(@"I have a testable (.*)")]
+        public void GivenIHaveATestable(Type type)
         {
             _testable = new Testable(type);
         }
@@ -25,7 +26,7 @@ namespace Prova.Tests.ForTestable
             _exception = action.GetException();
         }
 
-        [Then(@"I should have seen a (.*)")]
+        [Then(@"I should have seen a[n]* (.*)")]
         public void ThenIShouldHaveSeenAn(Type expectedExceptionType)
         {
             Assert.That(_exception, Is.InstanceOf(expectedExceptionType));

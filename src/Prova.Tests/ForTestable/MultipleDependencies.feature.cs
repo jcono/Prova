@@ -55,23 +55,23 @@ namespace Prova.Tests.ForTestable
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Support multiple different ways of obtaining dependencies")]
-        [NUnit.Framework.CategoryAttribute("Testable")]
+        [NUnit.Framework.CategoryAttribute("Multiple_Dependencies")]
         public virtual void SupportMultipleDifferentWaysOfObtainingDependencies()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Support multiple different ways of obtaining dependencies", new string[] {
-                        "Testable"});
+                        "Multiple_Dependencies"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I specify a default dependency to use");
+ testRunner.Given("I specify that testable instances use a default dependency");
 #line 9
- testRunner.And("I have a testable object");
+ testRunner.And("I have a testable HasMultipleDependencies");
 #line 10
-    testRunner.And("I use a dependency ExplicitDependency");
+    testRunner.And("I use an explicit dependency");
 #line 11
  testRunner.When("I use the testable object");
 #line 12
-    testRunner.Then("I should have a default dependency with the correct type");
+    testRunner.Then("I should have a default dependency");
 #line 13
     testRunner.And("I should have an explicit dependency");
 #line 14

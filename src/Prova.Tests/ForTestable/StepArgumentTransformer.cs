@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Reflection;
+using System.Collections.Generic;
+using System.Linq;
 using TechTalk.SpecFlow;
 
 namespace Prova.Tests.ForTestable
@@ -7,10 +8,12 @@ namespace Prova.Tests.ForTestable
     [Binding]
     public class StepArgumentTransformer
     {
+        private static readonly IEnumerable<Type> AllLoadedTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes());
+
         [StepArgumentTransformation]
-        public Type TransformType(string expr)
+        public Type TransformType(string typeName)
         {
-            return Type.GetType(expr, true, true);
+            return AllLoadedTypes.FirstOrDefault(x => x.Name == typeName);
         }
     }
 }

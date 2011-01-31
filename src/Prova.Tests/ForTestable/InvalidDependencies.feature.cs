@@ -55,19 +55,19 @@ namespace Prova.Tests.ForTestable
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Should not be able to provide a dependency that can not be injected")]
-        [NUnit.Framework.CategoryAttribute("Testable")]
+        [NUnit.Framework.CategoryAttribute("Invalid_Dependencies")]
         public virtual void ShouldNotBeAbleToProvideADependencyThatCanNotBeInjected()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Should not be able to provide a dependency that can not be injected", new string[] {
-                        "Testable"});
+                        "Invalid_Dependencies"});
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have a testable object");
+ testRunner.Given("I have a testable HasSingleDependency");
 #line 9
  testRunner.When("I tell the object to use an incorrect dependency");
 #line 10
- testRunner.Then("I should have seen a System.ArgumentException");
+ testRunner.Then("I should have seen an ArgumentException");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
