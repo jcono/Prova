@@ -17,8 +17,9 @@ namespace Prova.Tests.ForTestable
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Can handle a class with multiple dependencies")]
-    public partial class CanHandleAClassWithMultipleDependenciesFeature
+    [NUnit.Framework.DescriptionAttribute("Can automatically provide different ways of obtaining dependencies for a type wit" +
+        "h multiple dependencies")]
+    public partial class CanAutomaticallyProvideDifferentWaysOfObtainingDependenciesForATypeWithMultipleDependenciesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,8 +31,9 @@ namespace Prova.Tests.ForTestable
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Can handle a class with multiple dependencies", "In order to be able to use complex testable objects\nAs a developer\nI want to be a" +
-                    "ble to be able to supply different types of dependencies", GenerationTargetLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Can automatically provide different ways of obtaining dependencies for a type wit" +
+                    "h multiple dependencies", "In order to be able to use complex testable objects\nAs a developer\nI want differe" +
+                    "nt ways to be obtain dependencies", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

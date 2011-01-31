@@ -1,7 +1,7 @@
-﻿Feature: Can handle a class with multiple dependencies
+﻿Feature: Can automatically provide different ways of obtaining dependencies for a type with multiple dependencies
 	In order to be able to use complex testable objects
 	As a developer
-	I want to be able to be able to supply different types of dependencies
+	I want different ways to be obtain dependencies
 
 @Multiple_Dependencies
 Scenario: Support multiple different ways of obtaining dependencies

@@ -6,7 +6,7 @@ namespace Prova
 {
     public class Testable
     {
-        public static DefaultDependencies InstanceOf(Type type)
+        public static DefaultDependencies InstancesOf(Type type)
         {
             return DefaultDependencyLookup.On(type);
         }

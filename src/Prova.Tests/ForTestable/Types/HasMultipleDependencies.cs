@@ -39,7 +39,7 @@
     {
     }
 
-    public class CannedImplicityDependency : IImplicityDependency
+    public class CannedImplicitDependency : IImplicityDependency
     {
     }
 

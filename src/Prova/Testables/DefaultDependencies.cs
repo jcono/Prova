@@ -22,7 +22,7 @@ namespace Prova.Testables
             }
         }
 
-        public dynamic For(Type type)
+        internal dynamic For(Type type)
         {
             return ValueFor(TheKey(ThatIsAssignableFrom(type)));
         }

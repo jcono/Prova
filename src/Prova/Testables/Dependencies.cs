@@ -21,7 +21,7 @@ namespace Prova.Testables
             _dependencies.Add(dependency);
         }
 
-        public dynamic GetRegisteredInstanceFor(Type type)
+        private dynamic GetRegisteredInstanceFor(Type type)
         {
             return _dependencies.SingleOrDefault(type.IsInstanceOfType);
         }
