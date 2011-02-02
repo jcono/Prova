@@ -1,4 +1,4 @@
-﻿Feature: Restrict the types that testable can create
+﻿Feature: Type restriction
     In order to diagnose problems quickly
     As a person running tests
     I want to be told if I've used an invalid type

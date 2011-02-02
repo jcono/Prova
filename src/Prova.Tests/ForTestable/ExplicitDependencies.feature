@@ -1,4 +1,4 @@
-﻿Feature: Provide explicit instances to use as dependencies for a testable instance
+﻿Feature: Explicit dependencies
     In order to be able to easily test classes
     As a developer
     I want to be able to specify specific depencencies to use on a testable instance

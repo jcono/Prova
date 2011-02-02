@@ -17,8 +17,8 @@ namespace Prova.Tests.ForTestable
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Can provide different ways of supplying a dependency to a class")]
-    public partial class CanProvideDifferentWaysOfSupplyingADependencyToAClassFeature
+    [NUnit.Framework.DescriptionAttribute("Implicit dependencies")]
+    public partial class ImplicitDependenciesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,8 +30,8 @@ namespace Prova.Tests.ForTestable
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Can provide different ways of supplying a dependency to a class", "In order to be able to use testable objects\nAs a developer\nI want to be able to s" +
-                    "upply different types of dependencies", GenerationTargetLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Implicit dependencies", "In order to be able to easily use testable objects\nAs a developer\nI want to have " +
+                    "dependencies implicitly provided for an instance of a testable type", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -54,10 +54,10 @@ namespace Prova.Tests.ForTestable
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Implicitly obtain a dependency from the loaded assemblies")]
-        public virtual void ImplicitlyObtainADependencyFromTheLoadedAssemblies()
+        [NUnit.Framework.DescriptionAttribute("Implicitly obtain a dependency")]
+        public virtual void ImplicitlyObtainADependency()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Implicitly obtain a dependency from the loaded assemblies", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Implicitly obtain a dependency", ((string[])(null)));
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
@@ -65,23 +65,6 @@ this.ScenarioSetup(scenarioInfo);
 #line 8
     testRunner.When("I want to use the testable instance");
 #line 9
-    testRunner.Then("I should have a dependency with a type of CannedDependency");
-#line hidden
-            testRunner.CollectScenarioErrors();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Implicitly obtain a dependency")]
-        public virtual void ImplicitlyObtainADependency()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Implicitly obtain a dependency", ((string[])(null)));
-#line 11
-this.ScenarioSetup(scenarioInfo);
-#line 12
-    testRunner.Given("I create a testable with a type of HasSingleDependency");
-#line 13
-    testRunner.When("I want to use the testable instance");
-#line 14
     testRunner.Then("I should have a dependency that is not null");
 #line hidden
             testRunner.CollectScenarioErrors();

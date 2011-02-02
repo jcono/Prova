@@ -17,8 +17,8 @@ namespace Prova.Tests.ForTestable
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Restrict the types that testable can create")]
-    public partial class RestrictTheTypesThatTestableCanCreateFeature
+    [NUnit.Framework.DescriptionAttribute("Type restriction")]
+    public partial class TypeRestrictionFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,7 +30,7 @@ namespace Prova.Tests.ForTestable
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Restrict the types that testable can create", "In order to diagnose problems quickly\nAs a person running tests\nI want to be told" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Type restriction", "In order to diagnose problems quickly\nAs a person running tests\nI want to be told" +
                     " if I\'ve used an invalid type", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }

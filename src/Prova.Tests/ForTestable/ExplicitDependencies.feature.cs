@@ -17,8 +17,8 @@ namespace Prova.Tests.ForTestable
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Provide explicit instances to use as dependencies for a testable instance")]
-    public partial class ProvideExplicitInstancesToUseAsDependenciesForATestableInstanceFeature
+    [NUnit.Framework.DescriptionAttribute("Explicit dependencies")]
+    public partial class ExplicitDependenciesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,7 +30,7 @@ namespace Prova.Tests.ForTestable
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Provide explicit instances to use as dependencies for a testable instance", "In order to be able to easily test classes\nAs a developer\nI want to be able to sp" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Explicit dependencies", "In order to be able to easily test classes\nAs a developer\nI want to be able to sp" +
                     "ecify specific depencencies to use on a testable instance", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }

@@ -1,4 +1,4 @@
-﻿Feature: Specify default actions to take to resolve dependencies if no explicit
+﻿Feature: Default dependencies
     In order to be able to easily test classes
     As a developer
     I want to be able to specify default depencencies to use for all testable instances of a type

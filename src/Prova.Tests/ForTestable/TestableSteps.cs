@@ -27,22 +27,10 @@ namespace Prova.Tests.ForTestable
             _context.Exception = action.GetException();
         }
 
-        [Given(@"I create another testable with a (.*)")]
-        public void CreateAnotherTestable(Type type)
-        {
-            _context.SecondTestable = new Testable(type);
-        }
-
         [When(@"I want to use the testable instance")]
         public void UseTheTestableObject()
         {
             _context.FirstInstance = _context.FirstTestable.Create();
-        }
-
-        [When(@"I want to use the other testable instance")]
-        public void UseTheOtherTestableObject()
-        {
-            _context.SecondInstance = _context.SecondTestable.Create();
         }
 
         [Then(@"I should have seen an exception with a (.*)")]

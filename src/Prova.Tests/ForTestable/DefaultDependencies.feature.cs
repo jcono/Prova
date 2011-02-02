@@ -17,8 +17,8 @@ namespace Prova.Tests.ForTestable
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.5.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Specify default actions to take to resolve dependencies if no explicit")]
-    public partial class SpecifyDefaultActionsToTakeToResolveDependenciesIfNoExplicitFeature
+    [NUnit.Framework.DescriptionAttribute("Default dependencies")]
+    public partial class DefaultDependenciesFeature
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -30,7 +30,7 @@ namespace Prova.Tests.ForTestable
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Specify default actions to take to resolve dependencies if no explicit", "In order to be able to easily test classes\nAs a developer\nI want to be able to sp" +
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Default dependencies", "In order to be able to easily test classes\nAs a developer\nI want to be able to sp" +
                     "ecify default depencencies to use for all testable instances of a type", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
