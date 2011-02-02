@@ -19,10 +19,6 @@
         }
     }
 
-    public interface IDefaultDependency
-    {
-    }
-
     public class DefaultDependency : IDefaultDependency
     {
     }

@@ -1,6 +1,6 @@
 ﻿namespace Prova.Tests.ForTestable.Types
 {
-    public interface IDependency
+    public class DifferentDependency : IDependency
     {
     }
 }

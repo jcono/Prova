@@ -57,28 +57,26 @@ namespace Prova.Tests.ForTestable
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Support multiple different ways of obtaining dependencies")]
-        [NUnit.Framework.CategoryAttribute("Multiple_Dependencies")]
         public virtual void SupportMultipleDifferentWaysOfObtainingDependencies()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Support multiple different ways of obtaining dependencies", new string[] {
-                        "Multiple_Dependencies"});
-#line 7
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Support multiple different ways of obtaining dependencies", ((string[])(null)));
+#line 6
 this.ScenarioSetup(scenarioInfo);
+#line 7
+    testRunner.Given("I specify that testable instances use a default dependency");
 #line 8
- testRunner.Given("I specify that testable instances use a default dependency");
+    testRunner.And("I create a testable with a type of HasMultipleDependencies");
 #line 9
- testRunner.And("I have a testable with a type of HasMultipleDependencies");
-#line 10
     testRunner.And("I use an explicit dependency");
+#line 10
+    testRunner.When("I want to use the testable instance");
 #line 11
- testRunner.When("I use the testable object");
-#line 12
     testRunner.Then("I should have a default dependency");
-#line 13
+#line 12
     testRunner.And("I should have an explicit dependency");
+#line 13
+    testRunner.And("I should have a canned dependency");
 #line 14
- testRunner.And("I should have a canned dependency");
-#line 15
     testRunner.And("I should have a mocked dependency");
 #line hidden
             testRunner.CollectScenarioErrors();

@@ -6,10 +6,10 @@ namespace Prova
 {
     public class Testable
     {
-        public static DefaultDependencies InstancesOf(Type type)
-        {
-            return DefaultDependencyLookup.On(type);
-        }
+//        public static DefaultDependencies InstancesOf(Type type)
+//        {
+//            return DefaultDependencyLookup.On(type);
+//        }
 
         private readonly Type _type;
         private readonly Constructor _constructor;
@@ -21,13 +21,13 @@ namespace Prova
             _constructor = new Constructor(_type);
             _dependencies = new Dependencies(_type);
         }
+
         public dynamic With(dynamic dependency)
         {
             MustHaveParameterFor(TypeOf(dependency));
             _dependencies.Add(dependency);
             return this;
         }
-
 
         public dynamic Create()
         {
