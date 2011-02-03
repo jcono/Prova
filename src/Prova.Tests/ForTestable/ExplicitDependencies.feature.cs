@@ -31,7 +31,7 @@ namespace Prova.Tests.ForTestable
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Explicit dependencies", "In order to be able to easily test classes\nAs a developer\nI want to be able to sp" +
-                    "ecify specific depencencies to use on a testable instance", GenerationTargetLanguage.CSharp, ((string[])(null)));
+                    "ecify depencencies to use on each testable instance", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -54,37 +54,35 @@ namespace Prova.Tests.ForTestable
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Specify an explicit dependency to use")]
-        public virtual void SpecifyAnExplicitDependencyToUse()
+        [NUnit.Framework.DescriptionAttribute("Can provide an explicit dependency to use with the testable instance")]
+        public virtual void CanProvideAnExplicitDependencyToUseWithTheTestableInstance()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Specify an explicit dependency to use", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can provide an explicit dependency to use with the testable instance", ((string[])(null)));
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.Given("I create a testable with a type of HasSingleDependency");
+    testRunner.Given("I create a testable for a type of HasSingleDependency");
 #line 8
-    testRunner.When("I tell the testable object to use an explicit dependency");
+    testRunner.When("I tell the testable to use and instance of StubDependency as a dependency");
 #line 9
     testRunner.And("I want to use the testable instance");
 #line 10
-    testRunner.Then("I should have an instance that uses that explicit dependency");
+    testRunner.Then("I should have an instance that uses that dependency");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Can not provide an explicit dependency that is not used by the type of the testab" +
-            "le instance")]
-        public virtual void CanNotProvideAnExplicitDependencyThatIsNotUsedByTheTypeOfTheTestableInstance()
+        [NUnit.Framework.DescriptionAttribute("Can not provide dependency that is not used by the type of the testable instance")]
+        public virtual void CanNotProvideDependencyThatIsNotUsedByTheTypeOfTheTestableInstance()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not provide an explicit dependency that is not used by the type of the testab" +
-                    "le instance", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not provide dependency that is not used by the type of the testable instance", ((string[])(null)));
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 13
-    testRunner.Given("I create a testable with a type of HasSingleDependency");
+    testRunner.Given("I create a testable for a type of HasSingleDependency");
 #line 14
-    testRunner.When("I tell the object to use a dependency it does not have");
+    testRunner.When("I tell the testable to use and instance of UnusedDependency as a dependency");
 #line 15
     testRunner.Then("I should have seen an exception with a type of ArgumentException");
 #line hidden

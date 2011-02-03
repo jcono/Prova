@@ -11,9 +11,15 @@ namespace Prova.Tests.ForTestable
         private static readonly IEnumerable<Type> AllLoadedTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes());
 
         [StepArgumentTransformation("type of (.*)")]
-        public Type TransformType(string typeName)
+        public Type TransformToType(string typeName)
         {
             return AllLoadedTypes.FirstOrDefault(x => x.Name == typeName);
+        } 
+        
+        [StepArgumentTransformation("instance of (.*)")]
+        public dynamic TransformToInstance(string typeName)
+        {
+            return Activator.CreateInstance(TransformToType(typeName));
         }
     }
 }

@@ -31,7 +31,7 @@ namespace Prova.Tests.ForTestable
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Default dependencies", "In order to be able to easily test classes\nAs a developer\nI want to be able to sp" +
-                    "ecify default depencencies to use for all testable instances of a type", GenerationTargetLanguage.CSharp, ((string[])(null)));
+                    "ecify depencencies to use for all testable instances of a type", GenerationTargetLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -54,48 +54,21 @@ namespace Prova.Tests.ForTestable
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Specify a default dependency to use on all testable instances")]
-        public virtual void SpecifyADefaultDependencyToUseOnAllTestableInstances()
+        [NUnit.Framework.DescriptionAttribute("Specify a type to use for a dependency all testable instances")]
+        public virtual void SpecifyATypeToUseForADependencyAllTestableInstances()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Specify a default dependency to use on all testable instances", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Specify a type to use for a dependency all testable instances", ((string[])(null)));
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.Given("I want to use a default dependency on all testable instances with type of HasSing" +
-                    "leDependency");
+    testRunner.Given("I want all testables for the type of HasSingleDependency to use the type of Defau" +
+                    "ltDependency");
 #line 8
-    testRunner.And("I create a testable with a type of HasSingleDependency");
+    testRunner.And("I create two testables for a type of HasSingleDependency");
 #line 9
-    testRunner.And("I create another testable with a type of HasSingleDependency");
+    testRunner.When("I want to use both the testable instance");
 #line 10
-    testRunner.When("I want to use the testable instance");
-#line 11
-    testRunner.And("I want to use the other testable instance");
-#line 12
     testRunner.Then("I should have two instances with different dependencies");
-#line hidden
-            testRunner.CollectScenarioErrors();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Change the default dependencies to use on all testable instances")]
-        public virtual void ChangeTheDefaultDependenciesToUseOnAllTestableInstances()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change the default dependencies to use on all testable instances", ((string[])(null)));
-#line 14
-this.ScenarioSetup(scenarioInfo);
-#line 15
-    testRunner.Given("I want to use a default dependency on all testable instances with type of HasSing" +
-                    "leDependency");
-#line 16
-    testRunner.When("I want to use a different default dependency on all testable instances with type " +
-                    "of HasSingleDependency");
-#line 17
-    testRunner.And("I create a testable with a type of HasSingleDependency");
-#line 18
-    testRunner.And("I want to use the testable instance");
-#line 19
-    testRunner.Then("I should have an instance that uses a different dependency");
 #line hidden
             testRunner.CollectScenarioErrors();
         }

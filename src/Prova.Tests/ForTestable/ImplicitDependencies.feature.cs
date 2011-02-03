@@ -61,7 +61,7 @@ namespace Prova.Tests.ForTestable
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.Given("I create a testable with a type of HasSingleDependency");
+    testRunner.Given("I create a testable for a type of HasSingleDependency");
 #line 8
     testRunner.When("I want to use the testable instance");
 #line 9

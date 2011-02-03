@@ -17,7 +17,7 @@ namespace Prova.Tests.ForTestable
         [Then(@"I should have a dependency that is not null")]
         public void ThenIShouldHaveADependencyThatIsNotNull()
         {
-            Assert.That(_context.FirstInstance.Dependency, Is.Not.Null);
+            Assert.That(_context.Instance.Dependency, Is.Not.Null);
         }
     }
 }
