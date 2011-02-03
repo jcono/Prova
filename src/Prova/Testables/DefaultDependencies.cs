@@ -1,10 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using Prova.Extensions;
 
 namespace Prova.Testables
 {
+    public class DefaultDependencies
+    {
+        private static readonly IDictionary<Type, DefaultDependencies> AllDefaults = new Dictionary<Type, DefaultDependencies>();
+
+        public static DefaultDependencies For(Type type)
+        {
+            if (!AllDefaults.ContainsKey(type))
+            {
+                AllDefaults.Add(type, new DefaultDependencies(type));
+            }
+            return AllDefaults[type];
+        }
+
+        private readonly Type _type;
+        private readonly IDictionary<Type, Func<dynamic>> _dependencies = new Dictionary<Type, Func<dynamic>>();
+
+        private DefaultDependencies(Type type)
+        {
+            _type = type;
+        }
+
+        public void UseDefaultOf(Type dependencyType)
+        {
+            _dependencies.Add(dependencyType, () => Activator.CreateInstance(dependencyType));
+        }
+
+        public void UseNoDefaults()
+        {
+            _dependencies.Clear();
+        }
+
+        public void UseDefaultOf(Func<dynamic> function)
+        {
+            _dependencies.Add(function.Method.ReturnType, function);
+        }
+    }
+
+
 //    public class DefaultDependencies
 //    {
 //        private readonly IDictionary<Type, Func<dynamic>> _defaults = new Dictionary<Type, Func<dynamic>>();

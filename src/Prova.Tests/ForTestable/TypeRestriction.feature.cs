@@ -61,9 +61,9 @@ namespace Prova.Tests.ForTestable
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.When("I create a testable for a type of HasStaticConstructor");
+    testRunner.When("I create a testable for a type HasStaticConstructor");
 #line 8
-    testRunner.Then("I should have an instance with that has a type of HasStaticConstructor");
+    testRunner.Then("I should have an instance with that has a type HasStaticConstructor");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
@@ -76,9 +76,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
 this.ScenarioSetup(scenarioInfo);
 #line 11
-    testRunner.When("I create a testable for a type of HasNoExplicitConstructor");
+    testRunner.When("I create a testable for a type HasNoExplicitConstructor");
 #line 12
-    testRunner.Then("I should have an instance with that has a type of HasNoExplicitConstructor");
+    testRunner.Then("I should have an instance with that has a type HasNoExplicitConstructor");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
@@ -91,9 +91,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 15
-    testRunner.When("I create a testable for a type of AbstractClass");
+    testRunner.When("I create a testable for a type AbstractClass");
 #line 16
-    testRunner.Then("I should have seen an exception with a type of ArgumentException");
+    testRunner.Then("I should have seen an exception with a type ArgumentException");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
@@ -106,9 +106,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 18
 this.ScenarioSetup(scenarioInfo);
 #line 19
-    testRunner.When("I create a testable for a type of AmbiguousConstructor");
+    testRunner.When("I create a testable for a type AmbiguousConstructor");
 #line 20
-    testRunner.Then("I should have seen an exception with a type of ArgumentException");
+    testRunner.Then("I should have seen an exception with a type ArgumentException");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
@@ -121,9 +121,9 @@ this.ScenarioSetup(scenarioInfo);
 #line 22
 this.ScenarioSetup(scenarioInfo);
 #line 23
-    testRunner.When("I create a testable for a type of HasTooManyConstructors");
+    testRunner.When("I create a testable for a type HasTooManyConstructors");
 #line 24
-    testRunner.Then("I should have seen an exception with a type of ArgumentException");
+    testRunner.Then("I should have seen an exception with a type ArgumentException");
 #line hidden
             testRunner.CollectScenarioErrors();
         }

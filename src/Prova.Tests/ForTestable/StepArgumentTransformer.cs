@@ -10,7 +10,7 @@ namespace Prova.Tests.ForTestable
     {
         private static readonly IEnumerable<Type> AllLoadedTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes());
 
-        [StepArgumentTransformation("type of (.*)")]
+        [StepArgumentTransformation("type (.*)")]
         public Type TransformToType(string typeName)
         {
             return AllLoadedTypes.FirstOrDefault(x => x.Name == typeName);

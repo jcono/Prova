@@ -54,20 +54,44 @@ namespace Prova.Tests.ForTestable
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Specify a type to use for a dependency all testable instances")]
-        public virtual void SpecifyATypeToUseForADependencyAllTestableInstances()
+        [NUnit.Framework.DescriptionAttribute("Specify a type to use for a dependency for all testable instances")]
+        public virtual void SpecifyATypeToUseForADependencyForAllTestableInstances()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Specify a type to use for a dependency all testable instances", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Specify a type to use for a dependency for all testable instances", ((string[])(null)));
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.Given("I want all testables for the type of HasSingleDependency to use the type of Defau" +
-                    "ltDependency");
+    testRunner.Given("I clear all the default dependencies for the type HasSingleDependency");
 #line 8
-    testRunner.And("I create two testables for a type of HasSingleDependency");
+    testRunner.When("I want all testables for the type HasSingleDependency to use the type DefaultDepe" +
+                    "ndency");
 #line 9
-    testRunner.When("I want to use both the testable instance");
+    testRunner.And("I create two testables for the type HasSingleDependency");
 #line 10
+    testRunner.And("I want to use both the testable instances");
+#line 11
+    testRunner.Then("I should have two instances with different dependencies");
+#line hidden
+            testRunner.CollectScenarioErrors();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Specify a function to use for a dependency for all testable instances")]
+        public virtual void SpecifyAFunctionToUseForADependencyForAllTestableInstances()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Specify a function to use for a dependency for all testable instances", ((string[])(null)));
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line 14
+    testRunner.Given("I clear all the default dependencies for the type HasSingleDependency");
+#line 15
+    testRunner.When("I want all testables for the type HasSingleDependency to use a function that retu" +
+                    "rns the type DefaultDependency");
+#line 16
+    testRunner.And("I create two testables for the type HasSingleDependency");
+#line 17
+    testRunner.And("I want to use both the testable instances");
+#line 18
     testRunner.Then("I should have two instances with different dependencies");
 #line hidden
             testRunner.CollectScenarioErrors();

@@ -61,7 +61,7 @@ namespace Prova.Tests.ForTestable
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.Given("I create a testable for a type of HasSingleDependency");
+    testRunner.Given("I create a testable for a type HasSingleDependency");
 #line 8
     testRunner.When("I tell the testable to use and instance of StubDependency as a dependency");
 #line 9
@@ -73,18 +73,18 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Can not provide dependency that is not used by the type of the testable instance")]
-        public virtual void CanNotProvideDependencyThatIsNotUsedByTheTypeOfTheTestableInstance()
+        [NUnit.Framework.DescriptionAttribute("Can not provide dependency that is not used by the type the testable instance")]
+        public virtual void CanNotProvideDependencyThatIsNotUsedByTheTypeTheTestableInstance()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not provide dependency that is not used by the type of the testable instance", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not provide dependency that is not used by the type the testable instance", ((string[])(null)));
 #line 12
 this.ScenarioSetup(scenarioInfo);
 #line 13
-    testRunner.Given("I create a testable for a type of HasSingleDependency");
+    testRunner.Given("I create a testable for a type HasSingleDependency");
 #line 14
     testRunner.When("I tell the testable to use and instance of UnusedDependency as a dependency");
 #line 15
-    testRunner.Then("I should have seen an exception with a type of ArgumentException");
+    testRunner.Then("I should have seen an exception with a type ArgumentException");
 #line hidden
             testRunner.CollectScenarioErrors();
         }

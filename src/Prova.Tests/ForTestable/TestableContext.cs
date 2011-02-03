@@ -5,7 +5,7 @@ namespace Prova.Tests.ForTestable
     public class TestableContext
     {
         private Testable _testable;
-        private Testable _secondTestable;
+        private Testable _otherTestable;
         private dynamic _instance;
         private dynamic _secondInstance;
         private dynamic _expectedDependency;
@@ -17,10 +17,10 @@ namespace Prova.Tests.ForTestable
             set { _testable = value; }
         }
 
-        public Testable SecondTestable
+        public Testable OtherTestable
         {
-            get { return _secondTestable; }
-            set { _secondTestable = value; }
+            get { return _otherTestable; }
+            set { _otherTestable = value; }
         }
 
         public dynamic Instance

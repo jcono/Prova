@@ -3,8 +3,16 @@
     As a developer
     I want to be able to specify depencencies to use for all testable instances of a type
 
-Scenario: Specify a type to use for a dependency all testable instances
-    Given I want all testables for the type of HasSingleDependency to use the type of DefaultDependency
-    And I create two testables for a type of HasSingleDependency
-    When I want to use both the testable instance
+Scenario: Specify a type to use for a dependency for all testable instances
+    Given I clear all the default dependencies for the type HasSingleDependency
+    When I want all testables for the type HasSingleDependency to use the type DefaultDependency
+    And I create two testables for the type HasSingleDependency
+    And I want to use both the testable instances
+    Then I should have two instances with different dependencies
+
+Scenario: Specify a function to use for a dependency for all testable instances
+    Given I clear all the default dependencies for the type HasSingleDependency
+    When I want all testables for the type HasSingleDependency to use a function that returns the type DefaultDependency
+    And I create two testables for the type HasSingleDependency
+    And I want to use both the testable instances
     Then I should have two instances with different dependencies

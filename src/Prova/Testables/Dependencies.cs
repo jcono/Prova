@@ -34,14 +34,14 @@ namespace Prova.Testables
 
         private static dynamic GetStubbedInstanceFor(Type type)
         {
-//            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-//            var allTypes = assemblies.SelectMany(a => a.GetTypes());
-//            var typesThatImplement = allTypes.Where(x => x.GetInterfaces().Any(i => i == type));
-//            var canned = typesThatImplement.FirstOrDefault(x => x.Name.StartsWith("Canned"));
-//            if (canned.IsNotNothing())
-//            {
-//                return canned.GetConstructors().FirstOrDefault().Invoke(new object[] {});
-//            }
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            var allTypes = assemblies.SelectMany(a => a.GetTypes());
+            var typesThatImplement = allTypes.Where(x => x.GetInterfaces().Any(i => i == type));
+            var canned = typesThatImplement.FirstOrDefault(x => x.Name.StartsWith("Canned"));
+            if (canned.IsNotNothing())
+            {
+                return canned.GetConstructors().FirstOrDefault().Invoke(new object[] {});
+            }
             return null;
         }
 
