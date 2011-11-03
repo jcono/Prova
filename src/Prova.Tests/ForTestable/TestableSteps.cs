@@ -21,6 +21,7 @@ namespace Prova.Tests.ForTestable
         {
             Action action = () =>
             {
+                Testable.InstancesOf(type).UseNoDefaults();
                 _context.Testable = new Testable(type);
                 _context.Instance = _context.Testable.Create();
             };

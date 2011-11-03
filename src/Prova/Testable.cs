@@ -8,7 +8,7 @@ namespace Prova
     {
         public static DefaultDependencies InstancesOf(Type type)
         {
-            return DefaultDependencies.For(type);
+            return DefaultDependencyLookup.On(type);
         }
 
         private readonly Type _type;

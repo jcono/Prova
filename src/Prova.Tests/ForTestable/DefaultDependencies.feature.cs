@@ -63,15 +63,13 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
     testRunner.Given("I clear all the default dependencies for the type HasSingleDependency");
 #line 8
-    testRunner.When("I want all testables for the type HasSingleDependency to use the type DefaultDepe" +
-                    "ndency");
+    testRunner.When("I want all testables for the type HasSingleDependency to use the type Dependency");
 #line 9
     testRunner.And("I create two testables for the type HasSingleDependency");
 #line 10
     testRunner.And("I want to use both the testable instances");
 #line 11
-    testRunner.Then("I should have two instances with different dependencies of type DefaultDependency" +
-                    "");
+    testRunner.Then("I should have two instances with different dependencies of type Dependency");
 #line hidden
             testRunner.CollectScenarioErrors();
         }
@@ -87,7 +85,7 @@ this.ScenarioSetup(scenarioInfo);
     testRunner.Given("I clear all the default dependencies for the type HasSingleDependency");
 #line 15
     testRunner.When("I want all testables for the type HasSingleDependency to use a function that retu" +
-                    "rns the type DefaultDependency");
+                    "rns the type Dependency");
 #line 16
     testRunner.And("I create two testables for the type HasSingleDependency");
 #line 17

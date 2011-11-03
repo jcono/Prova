@@ -13,7 +13,7 @@ namespace Prova.Tests.ForTestable
         [StepArgumentTransformation("type (.*)")]
         public Type TransformToType(string typeName)
         {
-            return AllLoadedTypes.FirstOrDefault(x => x.Name == typeName);
+            return AllLoadedTypes.First(x => x.Name == typeName);
         } 
         
         [StepArgumentTransformation("instance of (.*)")]
