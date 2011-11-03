@@ -7,7 +7,7 @@ namespace Prova.Testables
     {
         private static readonly IDictionary<Type, DefaultDependencies> AllDefaults = new Dictionary<Type, DefaultDependencies>();
 
-        public static DefaultDependencies For(Type type)
+        public DefaultDependencies For(Type type)
         {
             if (!AllDefaults.ContainsKey(type))
             {

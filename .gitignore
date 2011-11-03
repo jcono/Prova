@@ -5,3 +5,4 @@
 *.suo
 _cache
 _cache\*
+*.wrap

@@ -29,9 +29,9 @@ namespace Prova.Tests.ForTestable
         [When(@"I want all testables for the (.*) to use a function that returns the (.*)")]
         public void AllTestablesToHaveDefaultDependencyFunction(Type testableType, Type defaultDependencyType)
         {
-            Func<dynamic> blah = () => Activator.CreateInstance(defaultDependencyType);
+            Func<dynamic> activator = () => Activator.CreateInstance(defaultDependencyType);
 
-            Testable.InstancesOf(testableType).UseDefaultOf(blah);
+            Testable.InstancesOf(testableType).UseDefaultOf(activator);
         }
 
         [When(@"I create two testables for the (.*)")]
@@ -48,9 +48,11 @@ namespace Prova.Tests.ForTestable
             _context.SecondInstance = _context.OtherTestable.Create();
         }
 
-        [Then(@"I should have two instances with different dependencies")]
-        public void ShouldHaveTwoInstancesWithDifferentDependencies()
+        [Then(@"I should have two instances with different dependencies of (.*)")]
+        public void ShouldHaveTwoInstancesWithDifferentDependenciesOf(Type type)
         {
+            Assert.That(_context.Instance.Dependency, Is.InstanceOf(type));
+            Assert.That(_context.SecondInstance.Dependency, Is.InstanceOf(type));
             Assert.That(_context.Instance.Dependency, Is.Not.EqualTo(_context.SecondInstance.Dependency));
         }
     }

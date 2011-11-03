@@ -19,5 +19,12 @@ namespace Prova.Tests.ForTestable
         {
             Assert.That(_context.Instance.Dependency, Is.Not.Null);
         }
+
+        [Then(@"I should have a dependency with a (.*)")]
+        public void ThenIShouldHaveADependencyWith(Type type)
+        {
+            Assert.That(_context.Instance.Dependency, Is.InstanceOf(type));
+        }
+
     }
 }

@@ -28,8 +28,8 @@ namespace Prova.Testables
 
         private dynamic GetDefaultInstanceFor(Type type)
         {
-            return null;
-//            return DefaultDependencyLookup.On(_type).For(type);
+//            return null;
+            return DefaultDependencyLookup.On(_type).For(type);
         }
 
         private static dynamic GetStubbedInstanceFor(Type type)
