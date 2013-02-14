@@ -9,7 +9,7 @@ namespace Prova.Tests.ForExtensions
         [Test]
         public void AreUniqueShouldReturnFalseForAUniqueArray()
         {
-            var strings = new[] { "one", "two", "three" };
+            var strings = new[] {"one", "two", "three"};
 
             var result = strings.AreUnique();
 
@@ -29,7 +29,7 @@ namespace Prova.Tests.ForExtensions
         [Test]
         public void AreUniqueShouldReturnTrueWithRepeatedItem()
         {
-            var strings = new[] { "one", "one", "two" };
+            var strings = new[] {"one", "one", "two"};
 
             var result = strings.AreUnique();
 
@@ -39,7 +39,7 @@ namespace Prova.Tests.ForExtensions
         [Test]
         public void HasCountOfShouldReturnFalseForIncorrectCount()
         {
-            var strings = new[] { "one", "two", "three" };
+            var strings = new[] {"one", "two", "three"};
 
             var result = strings.HasCountOf(4);
 
@@ -59,7 +59,7 @@ namespace Prova.Tests.ForExtensions
         [Test]
         public void HasCountOfShouldReturnTrueForCorrectCount()
         {
-            var strings = new[] { "one", "two", "three" };
+            var strings = new[] {"one", "two", "three"};
 
             var result = strings.HasCountOf(3);
 

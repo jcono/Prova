@@ -8,8 +8,8 @@ namespace Prova.Testables
 {
     public sealed class Dependencies
     {
-        private readonly Type _type;
         private readonly ICollection<dynamic> _dependencies = new List<dynamic>();
+        private readonly Type _type;
 
         public Dependencies(Type type)
         {
