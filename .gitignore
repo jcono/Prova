@@ -6,3 +6,4 @@ _cache
 _cache\*
 *.wrap
 *.user
+packages/
