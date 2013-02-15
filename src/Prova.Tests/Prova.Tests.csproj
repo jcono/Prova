@@ -39,6 +39,31 @@
     <Compile Include="ForExtensions\ForActionTests.cs" />
     <Compile Include="ForExtensions\ForGenericTests.cs" />
     <Compile Include="ForExtensions\ForIEnumerableTests.cs" />
+    <Compile Include="ForTestable\DefaultDependencies.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultDependencies.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ForTestable\DefaultDependenciesSteps.cs" />
+    <Compile Include="ForTestable\DependencyAssertions.cs" />
+    <Compile Include="ForTestable\ExplicitDependencies.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExplicitDependencies.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ForTestable\ImplicitDependencies.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImplicitDependencies.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ForTestable\StepArgumentTransformer.cs" />
+    <Compile Include="ForTestable\TestableContext.cs" />
+    <Compile Include="ForTestable\TestableSteps.cs" />
+    <Compile Include="ForTestable\TypeRestriction.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeRestriction.feature</DependentUpon>
+    </Compile>
     <Compile Include="ForTestable\Types\AbstractClass.cs" />
     <Compile Include="ForTestable\Types\AmbiguousConstructor.cs" />
     <Compile Include="ForTestable\Types\CannedDependency.cs" />
@@ -57,12 +82,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="nunit.framework, Version=2.6.2.12296, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\NUnit.2.6.2\lib\nunit.framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\..\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ForTestable\DefaultDependencies.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefaultDependencies.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ForTestable\ExplicitDependencies.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ExplicitDependencies.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ForTestable\ImplicitDependencies.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImplicitDependencies.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ForTestable\TypeRestriction.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TypeRestriction.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
