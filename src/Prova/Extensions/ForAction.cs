@@ -14,7 +14,7 @@ namespace Prova.Extensions
                     action();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 exception = ex;
             }

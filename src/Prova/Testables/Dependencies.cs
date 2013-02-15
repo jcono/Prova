@@ -39,7 +39,7 @@ namespace Prova.Testables
             var canned = typesThatImplement.FirstOrDefault(x => x.Name.StartsWith("Canned"));
             if (canned.IsNotNothing())
             {
-                return canned.GetConstructors().FirstOrDefault().Invoke(new object[] {});
+                return canned.GetConstructors().FirstOrDefault().Invoke(new object[] { });
             }
             return null;
         }

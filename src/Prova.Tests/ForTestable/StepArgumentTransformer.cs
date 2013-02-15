@@ -12,7 +12,7 @@ namespace Prova.Tests.ForTestable
             AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes());
 
         [StepArgumentTransformation("type (.*)")]
-        public Type TransformToType(string typeName)
+        private Type TransformToType(string typeName)
         {
             return AllLoadedTypes.First(x => x.Name == typeName);
         }

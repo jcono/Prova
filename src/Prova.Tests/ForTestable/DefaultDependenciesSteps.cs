@@ -27,8 +27,8 @@ namespace Prova.Tests.ForTestable
             Testable.InstancesOf(testableType).UseDefaultOf(defaultDependencyType);
         }
 
-        [When(@"I want all testables for the (.*) to use a function that returns the (.*)")]
-        public void AllTestablesToHaveDefaultDependencyFunction(Type testableType, Type defaultDependencyType)
+        [When(@"I want all testables for the (.*) to use a function that returns the type Dependency")]
+        public void AllTestablesToHaveDefaultDependencyFunction(Type testableType)
         {
             Testable.InstancesOf(testableType).UseDefaultOf(Activator.CreateInstance<Dependency>);
         }
