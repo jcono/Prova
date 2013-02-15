@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using Prova.Tests.ForTestable.Types;
 using TechTalk.SpecFlow;
 
 namespace Prova.Tests.ForTestable
@@ -29,9 +30,7 @@ namespace Prova.Tests.ForTestable
         [When(@"I want all testables for the (.*) to use a function that returns the (.*)")]
         public void AllTestablesToHaveDefaultDependencyFunction(Type testableType, Type defaultDependencyType)
         {
-            Func<dynamic> activator = () => Activator.CreateInstance(defaultDependencyType);
-
-            Testable.InstancesOf(testableType).UseDefaultOf(activator);
+            Testable.InstancesOf(testableType).UseDefaultOf(Activator.CreateInstance<Dependency>);
         }
 
         [When(@"I create two testables for the (.*)")]

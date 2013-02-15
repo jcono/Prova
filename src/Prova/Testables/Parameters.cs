@@ -24,7 +24,8 @@ namespace Prova.Testables
             return _parameters.Select(dependencies.InstanceForType);
         }
 
-        private static IEnumerable<Type> SelectAll(IEnumerable<ParameterInfo> parametersInformation, Func<ParameterInfo, Type> selector)
+        private static IEnumerable<Type> SelectAll(IEnumerable<ParameterInfo> parametersInformation,
+                                                   Func<ParameterInfo, Type> selector)
         {
             return parametersInformation.Select(selector);
         }

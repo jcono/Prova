@@ -9,137 +9,157 @@
 //      the code is regenerated.
 //  </auto-generated>
 // ------------------------------------------------------------------------------
+
 #region Designer generated code
+
+using TechTalk.SpecFlow;
+
 #pragma warning disable
+
 namespace Prova.Tests.ForTestable
 {
-    using TechTalk.SpecFlow;
-    
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Type restriction")]
     public partial class TypeRestrictionFeature
     {
-        
         private static TechTalk.SpecFlow.ITestRunner testRunner;
-        
+
 #line 1 "TypeRestriction.feature"
 #line hidden
-        
+
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Type restriction", "  In order to diagnose problems quickly\r\n  As a person running tests\r\n  I want to" +
-                    " be told if I\'ve used an invalid type", ProgrammingLanguage.CSharp, ((string[])(null)));
+            var featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"),
+                                                                "Type restriction",
+                                                                "  In order to diagnose problems quickly\r\n  As a person running tests\r\n  I want to" +
+                                                                " be told if I\'ve used an invalid type",
+                                                                ProgrammingLanguage.CSharp, ((string[]) (null)));
             testRunner.OnFeatureStart(featureInfo);
         }
-        
+
         [NUnit.Framework.TestFixtureTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
-        
+
         [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
-        
+
         [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
         }
-        
+
         public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioStart(scenarioInfo);
         }
-        
+
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
-        
+
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Can use a type with only a static constructor")]
         public virtual void CanUseATypeWithOnlyAStaticConstructor()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can use a type with only a static constructor", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can use a type with only a static constructor",
+                                                                  ((string[]) (null)));
 #line 6
-this.ScenarioSetup(scenarioInfo);
+            this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.When("I create a testable for a type HasStaticConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("I create a testable for a type HasStaticConstructor", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "When ");
 #line 8
-    testRunner.Then("I should have an instance with that has a type HasStaticConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("I should have an instance with that has a type HasStaticConstructor", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
-        
+
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Can use a type without an explicit constructor")]
         public virtual void CanUseATypeWithoutAnExplicitConstructor()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can use a type without an explicit constructor", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can use a type without an explicit constructor",
+                                                                  ((string[]) (null)));
 #line 10
-this.ScenarioSetup(scenarioInfo);
+            this.ScenarioSetup(scenarioInfo);
 #line 11
-    testRunner.When("I create a testable for a type HasNoExplicitConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("I create a testable for a type HasNoExplicitConstructor", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "When ");
 #line 12
-    testRunner.Then("I should have an instance with that has a type HasNoExplicitConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("I should have an instance with that has a type HasNoExplicitConstructor", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
-        
+
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Can not use an abstract type")]
         public virtual void CanNotUseAnAbstractType()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not use an abstract type", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not use an abstract type", ((string[]) (null)));
 #line 14
-this.ScenarioSetup(scenarioInfo);
+            this.ScenarioSetup(scenarioInfo);
 #line 15
-    testRunner.When("I create a testable for a type AbstractClass", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("I create a testable for a type AbstractClass", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "When ");
 #line 16
-    testRunner.Then("I should have seen an exception with a type ArgumentException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("I should have seen an exception with a type ArgumentException", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
-        
+
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Can not use a type with an ambiguous constructor")]
         public virtual void CanNotUseATypeWithAnAmbiguousConstructor()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not use a type with an ambiguous constructor", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not use a type with an ambiguous constructor",
+                                                                  ((string[]) (null)));
 #line 18
-this.ScenarioSetup(scenarioInfo);
+            this.ScenarioSetup(scenarioInfo);
 #line 19
-    testRunner.When("I create a testable for a type AmbiguousConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("I create a testable for a type AmbiguousConstructor", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "When ");
 #line 20
-    testRunner.Then("I should have seen an exception with a type ArgumentException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("I should have seen an exception with a type ArgumentException", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
-        
+
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Can not use a type with too many constructors")]
         public virtual void CanNotUseATypeWithTooManyConstructors()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not use a type with too many constructors", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Can not use a type with too many constructors",
+                                                                  ((string[]) (null)));
 #line 22
-this.ScenarioSetup(scenarioInfo);
+            this.ScenarioSetup(scenarioInfo);
 #line 23
-    testRunner.When("I create a testable for a type HasTooManyConstructors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("I create a testable for a type HasTooManyConstructors", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "When ");
 #line 24
-    testRunner.Then("I should have seen an exception with a type ArgumentException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("I should have seen an exception with a type ArgumentException", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
     }
 }
+
 #pragma warning restore
+
 #endregion

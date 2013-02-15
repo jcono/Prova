@@ -20,11 +20,11 @@ namespace Prova.Tests.ForTestable
         public void CreateTestableWith(Type type)
         {
             Action action = () =>
-            {
-                Testable.InstancesOf(type).UseNoDefaults();
-                _context.Testable = new Testable(type);
-                _context.Instance = _context.Testable.Create();
-            };
+                                {
+                                    Testable.InstancesOf(type).UseNoDefaults();
+                                    _context.Testable = new Testable(type);
+                                    _context.Instance = _context.Testable.Create();
+                                };
             _context.Exception = action.GetException();
         }
 
@@ -32,10 +32,10 @@ namespace Prova.Tests.ForTestable
         public void TellTheTestableToUseDependency(dynamic dependency)
         {
             Action action = () =>
-            {
-                _context.ExpectedDependency = dependency;
-                _context.Testable.With(dependency);
-            };
+                                {
+                                    _context.ExpectedDependency = dependency;
+                                    _context.Testable.With(dependency);
+                                };
             _context.Exception = action.GetException();
         }
 

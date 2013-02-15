@@ -8,14 +8,15 @@ namespace Prova.Tests.ForTestable
     [Binding]
     public class StepArgumentTransformer
     {
-        private static readonly IEnumerable<Type> AllLoadedTypes = AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes());
+        private static readonly IEnumerable<Type> AllLoadedTypes =
+            AppDomain.CurrentDomain.GetAssemblies().SelectMany(x => x.GetTypes());
 
         [StepArgumentTransformation("type (.*)")]
         public Type TransformToType(string typeName)
         {
             return AllLoadedTypes.First(x => x.Name == typeName);
-        } 
-        
+        }
+
         [StepArgumentTransformation("instance of (.*)")]
         public dynamic TransformToInstance(string typeName)
         {

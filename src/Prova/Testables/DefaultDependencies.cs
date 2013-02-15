@@ -23,9 +23,9 @@ namespace Prova.Testables
             _defaults.Add(dependencyType, () => Activator.CreateInstance(dependencyType));
         }
 
-        public void UseDefaultOf(Func<dynamic> function)
+        public void UseDefaultOf<T>(Func<T> function)
         {
-            _defaults.Add(function.Method.ReturnType, function);
+            _defaults.Add(typeof(T), () => function());
         }
 
         public dynamic InstanceFor(Type type)

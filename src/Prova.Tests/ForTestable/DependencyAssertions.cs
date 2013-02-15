@@ -25,6 +25,5 @@ namespace Prova.Tests.ForTestable
         {
             Assert.That(_context.Instance.Dependency, Is.InstanceOf(type));
         }
-
     }
 }

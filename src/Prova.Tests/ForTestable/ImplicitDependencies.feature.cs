@@ -9,96 +9,110 @@
 //      the code is regenerated.
 //  </auto-generated>
 // ------------------------------------------------------------------------------
+
 #region Designer generated code
+
+using TechTalk.SpecFlow;
+
 #pragma warning disable
+
 namespace Prova.Tests.ForTestable
 {
-    using TechTalk.SpecFlow;
-    
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.9.0.77")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Implicit dependencies")]
     public partial class ImplicitDependenciesFeature
     {
-        
         private static TechTalk.SpecFlow.ITestRunner testRunner;
-        
+
 #line 1 "ImplicitDependencies.feature"
 #line hidden
-        
+
         [NUnit.Framework.TestFixtureSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Implicit dependencies", "  In order to be able to easily use testable objects\n  As a developer\n  I want to" +
-                    " have dependencies implicitly provided for an instance of a testable type", ProgrammingLanguage.CSharp, ((string[])(null)));
+            var featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"),
+                                                                "Implicit dependencies",
+                                                                "  In order to be able to easily use testable objects\n  As a developer\n  I want to" +
+                                                                " have dependencies implicitly provided for an instance of a testable type",
+                                                                ProgrammingLanguage.CSharp, ((string[]) (null)));
             testRunner.OnFeatureStart(featureInfo);
         }
-        
+
         [NUnit.Framework.TestFixtureTearDownAttribute()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
-        
+
         [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
-        
+
         [NUnit.Framework.TearDownAttribute()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
         }
-        
+
         public virtual void ScenarioSetup(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioStart(scenarioInfo);
         }
-        
+
         public virtual void ScenarioCleanup()
         {
             testRunner.CollectScenarioErrors();
         }
-        
+
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Implicitly obtain a dependency")]
         public virtual void ImplicitlyObtainADependency()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Implicitly obtain a dependency", ((string[])(null)));
+            var scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Implicitly obtain a dependency", ((string[]) (null)));
 #line 6
-this.ScenarioSetup(scenarioInfo);
+            this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.Given("I create a testable for a type HasSingleDependency", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Given("I create a testable for a type HasSingleDependency", ((string) (null)),
+                             ((TechTalk.SpecFlow.Table) (null)), "Given ");
 #line 8
-    testRunner.When("I want to use the testable instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("I want to use the testable instance", ((string) (null)), ((TechTalk.SpecFlow.Table) (null)),
+                            "When ");
 #line 9
-    testRunner.Then("I should have a dependency that is not null", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("I should have a dependency that is not null", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
-        
+
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Implicitly obtain a dependency from the loaded assemblies")]
         public virtual void ImplicitlyObtainADependencyFromTheLoadedAssemblies()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Implicitly obtain a dependency from the loaded assemblies", ((string[])(null)));
+            var scenarioInfo =
+                new TechTalk.SpecFlow.ScenarioInfo("Implicitly obtain a dependency from the loaded assemblies",
+                                                   ((string[]) (null)));
 #line 11
-this.ScenarioSetup(scenarioInfo);
+            this.ScenarioSetup(scenarioInfo);
 #line 12
-    testRunner.Given("I create a testable for a type HasSingleDependency", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+            testRunner.Given("I create a testable for a type HasSingleDependency", ((string) (null)),
+                             ((TechTalk.SpecFlow.Table) (null)), "Given ");
 #line 13
-    testRunner.When("I want to use the testable instance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+            testRunner.When("I want to use the testable instance", ((string) (null)), ((TechTalk.SpecFlow.Table) (null)),
+                            "When ");
 #line 14
-    testRunner.Then("I should have a dependency with a type CannedDependency", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+            testRunner.Then("I should have a dependency with a type CannedDependency", ((string) (null)),
+                            ((TechTalk.SpecFlow.Table) (null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
     }
 }
+
 #pragma warning restore
+
 #endregion
