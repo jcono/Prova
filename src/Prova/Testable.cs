@@ -1,4 +1,5 @@
 ﻿using System;
+using Prova.Extensions;
 using Prova.Testables;
 
 namespace Prova
@@ -30,7 +31,11 @@ namespace Prova
 
         public Testable With(dynamic dependency)
         {
-            ConstructorExtensions.MustHaveParameterFor(_constructor, TypeOf(dependency));
+            Type parameterType = TypeOf(dependency);
+            if (_constructor.TypeOfParameterFor(parameterType).IsNothing())
+            {
+                _constructor.NoMatchingParameterException(parameterType);
+            }
 
             _dependencies.Add(dependency);
             return this;
@@ -43,12 +48,9 @@ namespace Prova
 
     public static class ConstructorExtensions
     {
-        public static void MustHaveParameterFor(this Constructor constructor, Type parameterType)
+        public static void NoMatchingParameterException(this Constructor constructor, Type parameterType)
         {
-            if (!constructor.HasParameterFor(parameterType))
-            {
-                throw new ArgumentException($"The constructor of the type [{constructor.Type}] does not contain a dependency assignable from type [{parameterType}]");
-            }
+            throw new ArgumentException($"The constructor of the type [{constructor.Type}] does not contain a dependency assignable from type [{parameterType}]");
         }
     }
  }

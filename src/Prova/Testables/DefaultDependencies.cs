@@ -15,33 +15,24 @@ namespace Prova.Testables
             _type = type;
         }
 
-        public void UseNoDefaults() => _defaults.Clear();
-
         public void UseDefaultOf<T>()
         {
-            UseDefaultOf(typeof(T), () => (T)Activator.CreateInstance(typeof(T)));
+            UseDefaultOf(Activator.CreateInstance<T>);
         }
 
         public void UseDefaultOf<T>(Func<T> function)
         {
-            UseDefaultOf(typeof(T), function);
-        }
-
-        private void UseDefaultOf<T>(Type parameterType, Func<T> function)
-        {
             var constructor = new Constructor(_type);
+            var parameterType = constructor.TypeOfParameterFor(typeof(T));
+            if (parameterType.IsNothing()) { constructor.NoMatchingParameterException(parameterType); }
 
-            constructor.MustHaveParameterFor(parameterType);
-
-            var t = constructor.TypeOfParameterFor(parameterType);
-
-            if (_defaults.ContainsKey(t))
+            if (_defaults.ContainsKey(parameterType))
             {
-                _defaults[t] = function;
+                _defaults[parameterType] = function;
             }
             else
             {
-                _defaults.Add(t, function);
+                _defaults.Add(parameterType, function);
             }
         }
 

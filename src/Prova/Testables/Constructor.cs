@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Prova.Extensions;
 
 namespace Prova.Testables
 {
@@ -30,14 +31,9 @@ namespace Prova.Testables
             return types.ToArray();
         }
 
-        public bool HasParameterFor(Type dependencyType)
-        {
-            return _parameters.HasParameterFor(dependencyType);
-        }
-
         public Type TypeOfParameterFor(Type parameterType)
         {
-            return _parameters.Find(parameterType);
+            return _parameters.ParameterTypeMatching(parameterType);
         }
     }
 }

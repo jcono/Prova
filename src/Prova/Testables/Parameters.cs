@@ -14,11 +14,6 @@ namespace Prova.Testables
             _parameters = SelectAll(ParametersForThe(constructor), ByParameterType);
         }
 
-        public bool HasParameterFor(Type type)
-        {
-            return _parameters.Any(x => x.IsAssignableFrom(type));
-        }
-
         public IEnumerable<dynamic> BuildInstancesUsing(Dependencies dependencies)
         {
             return _parameters.Select(dependencies.InstanceForType);
@@ -40,7 +35,7 @@ namespace Prova.Testables
             return parameter.ParameterType;
         }
 
-        public Type Find(Type parameterType)
+        public Type ParameterTypeMatching(Type parameterType)
         {
             return _parameters.SingleOrDefault(x => x.IsAssignableFrom(parameterType));
         }
