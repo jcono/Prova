@@ -51,10 +51,12 @@ namespace Prova.Testables
 
         public dynamic InstanceForType(Type type)
         {
-            return GetRegisteredInstanceFor(type)
+            return default(dynamic)
+                ?? GetRegisteredInstanceFor(type)
                    ?? GetDefaultInstanceFor(type)
-                   ?? GetStubbedInstanceFor(type)
-                   ?? GetMockLibraryInstanceFor(type);
+//                   ?? GetStubbedInstanceFor(type)
+                   ?? GetMockLibraryInstanceFor(type)
+                   ?? default(dynamic);
         }
     }
 }

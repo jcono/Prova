@@ -12,9 +12,12 @@ namespace Prova.Testables
 
         public Constructor(Type type)
         {
+            Type = type;
             _constructor = new ConstructorFinder(type).Find();
             _parameters = new Parameters(_constructor);
         }
+
+        public Type Type { get; }
 
         public dynamic InvokeUsing(Dependencies dependencies)
         {

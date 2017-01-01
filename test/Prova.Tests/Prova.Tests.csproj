@@ -35,46 +35,9 @@
     <Compile Include="ForExtensions\ForGenericTests.cs" />
     <Compile Include="ForExtensions\ForIEnumerableTests.cs" />
     <Compile Include="ForTestable\TestableTests.cs" />
-    <Compile Include="ForTestable\Features\DefaultDependencies.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DefaultDependencies.feature</DependentUpon>
-    </Compile>
-    <Compile Include="ForTestable\Features\DefaultDependenciesSteps.cs" />
-    <Compile Include="ForTestable\Features\DependencyAssertions.cs" />
-    <Compile Include="ForTestable\Features\ExplicitDependencies.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExplicitDependencies.feature</DependentUpon>
-    </Compile>
-    <Compile Include="ForTestable\Features\ImplicitDependencies.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ImplicitDependencies.feature</DependentUpon>
-    </Compile>
-    <Compile Include="ForTestable\Features\StepArgumentTransformer.cs" />
-    <Compile Include="ForTestable\Features\TestableContext.cs" />
-    <Compile Include="ForTestable\Features\TestableSteps.cs" />
-    <Compile Include="ForTestable\Features\TypeRestriction.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TypeRestriction.feature</DependentUpon>
-    </Compile>
-    <Compile Include="ForTestable\Types\AbstractClass.cs" />
-    <Compile Include="ForTestable\Types\AmbiguousConstructor.cs" />
-    <Compile Include="ForTestable\Types\CannedDependency.cs" />
-    <Compile Include="ForTestable\Types\Dependency.cs" />
-    <Compile Include="ForTestable\Types\DifferentDependency.cs" />
+    <Compile Include="ForTestable\Types\Classes.cs" />
     <Compile Include="ForTestable\Types\HasMultipleDependencies.cs" />
-    <Compile Include="ForTestable\Types\HasNoExplicitConstructor.cs" />
-    <Compile Include="ForTestable\Types\HasSingleDependency.cs" />
-    <Compile Include="ForTestable\Types\HasStaticConstructor.cs" />
-    <Compile Include="ForTestable\Types\HasTooManyConstructors.cs" />
-    <Compile Include="ForTestable\Types\IDefaultDependency.cs" />
-    <Compile Include="ForTestable\Types\IDependency.cs" />
-    <Compile Include="ForTestable\Types\IUnusedDependency.cs" />
-    <Compile Include="ForTestable\Types\StubDependency.cs" />
-    <Compile Include="ForTestable\Types\UnusedDependency.cs" />
+    <Compile Include="ForTestable\Types\Dependencies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,22 +54,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ForTestable\Features\DefaultDependencies.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>DefaultDependencies.feature.cs</LastGenOutput>
-    </None>
-    <None Include="ForTestable\Features\ExplicitDependencies.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ExplicitDependencies.feature.cs</LastGenOutput>
-    </None>
-    <None Include="ForTestable\Features\ImplicitDependencies.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>ImplicitDependencies.feature.cs</LastGenOutput>
-    </None>
-    <None Include="ForTestable\Features\TypeRestriction.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>TypeRestriction.feature.cs</LastGenOutput>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

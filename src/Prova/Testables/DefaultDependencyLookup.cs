@@ -5,14 +5,13 @@ namespace Prova.Testables
 {
     public static class DefaultDependencyLookup
     {
-        private static readonly IDictionary<Type, DefaultDependencies> Lookup =
-            new Dictionary<Type, DefaultDependencies>();
+        private static readonly IDictionary<Type, dynamic> Lookup = new Dictionary<Type, dynamic>();
 
-        public static DefaultDependencies On(Type type)
+        public static dynamic On(Type type)
         {
             if (!Lookup.ContainsKey(type))
             {
-                Lookup.Add(type, new DefaultDependencies());
+                Lookup.Add(type, new DefaultDependencies(type));
             }
             return Lookup[type];
         }

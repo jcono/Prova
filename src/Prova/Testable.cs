@@ -5,15 +5,12 @@ namespace Prova
 {
     public class Testable<T> : Testable
     {
-        public Testable() : base(typeof(T))
-        {
-        }
+        public Testable() : base(typeof(T)) { }
 
         public new T Create()
         {
             return base.Create();
         }
-
     }
 
     public class Testable
@@ -29,35 +26,29 @@ namespace Prova
             _dependencies = new Dependencies(_type);
         }
 
-        public static DefaultDependencies InstancesOf(Type type)
-        {
-            return DefaultDependencyLookup.On(type);
-        }
+        public static DefaultDependencies InstancesOf<T>() => DefaultDependencyLookup.On(typeof(T));
 
         public Testable With(dynamic dependency)
         {
-            MustHaveParameterFor(TypeOf(dependency));
+            ConstructorExtensions.MustHaveParameterFor(_constructor, TypeOf(dependency));
 
             _dependencies.Add(dependency);
             return this;
         }
 
-        public dynamic Create()
-        {
-            return _constructor.InvokeUsing(_dependencies);
-        }
+        public dynamic Create() => _constructor.InvokeUsing(_dependencies);
 
-        private void MustHaveParameterFor(Type parameterType)
+        private static Type TypeOf(dynamic dependency) => dependency.GetType();
+    }
+
+    public static class ConstructorExtensions
+    {
+        public static void MustHaveParameterFor(this Constructor constructor, Type parameterType)
         {
-            if (!_constructor.HasParameterFor(parameterType))
+            if (!constructor.HasParameterFor(parameterType))
             {
-                throw new ArgumentException($"The constructor of the type [{_type}] does not contain a dependency assignable from type [{parameterType}]");
+                throw new ArgumentException($"The constructor of the type [{constructor.Type}] does not contain a dependency assignable from type [{parameterType}]");
             }
         }
-
-        private static Type TypeOf(dynamic dependency)
-        {
-            return dependency.GetType();
-        }
     }
-}
+ }

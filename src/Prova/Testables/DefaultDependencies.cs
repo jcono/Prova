@@ -7,25 +7,38 @@ namespace Prova.Testables
 {
     public class DefaultDependencies
     {
-        private readonly IDictionary<Type, Func<dynamic>> _defaults = new Dictionary<Type, Func<dynamic>>();
+        private readonly Type _type;
+        private readonly IDictionary<Type, dynamic> _defaults = new Dictionary<Type, dynamic>();
 
-        internal DefaultDependencies()
+        internal DefaultDependencies(Type type)
         {
+            _type = type;
         }
 
-        public void UseNoDefaults()
+        public void UseNoDefaults() => _defaults.Clear();
+
+        public void UseDefaultOf<T>()
         {
-            _defaults.Clear();
+            UseDefaultOf(typeof(T), () => (T)Activator.CreateInstance(typeof(T)));
         }
 
-        public void UseDefaultOf(Type dependencyType)
+        public void UseDefaultOf<T>(Func<T> function)
         {
-            _defaults.Add(dependencyType, () => Activator.CreateInstance(dependencyType));
+            UseDefaultOf(typeof(T), function);
         }
 
-        public void UseDefaultOf(Func<dynamic> function)
+        private void UseDefaultOf<T>(Type parameterType, Func<T> function)
         {
-            _defaults.Add(function.Method.ReturnType, function);
+            new Constructor(_type).MustHaveParameterFor(parameterType);
+
+            if (_defaults.ContainsKey(parameterType))
+            {
+                _defaults[parameterType] = function;
+            }
+            else
+            {
+                _defaults.Add(parameterType, function);
+            }
         }
 
         public dynamic InstanceFor(Type type)
