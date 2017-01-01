@@ -1,5 +1,4 @@
 ﻿using System;
-using Prova.Resources;
 using Prova.Testables;
 
 namespace Prova
@@ -39,7 +38,7 @@ namespace Prova
         {
             if (!_constructor.HasParameterFor(parameterType))
             {
-                throw new ArgumentException(string.Format(ExceptionMessages.InvalidDependency, _type, parameterType));
+                throw new ArgumentException($"The constructor of the type [{_type}] does not contain a dependency assignable from type [{parameterType}]");
             }
         }
 

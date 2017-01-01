@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A22F6C6-9A26-4EB5-B363-93580F437862}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Prova.Tests</RootNamespace>
+    <AssemblyName>Prova.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ForExtensions\ForActionTests.cs" />
+    <Compile Include="ForExtensions\ForGenericTests.cs" />
+    <Compile Include="ForExtensions\ForIEnumerableTests.cs" />
+    <Compile Include="ForTestable\DefaultDependencies.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DefaultDependencies.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ForTestable\DefaultDependenciesSteps.cs" />
+    <Compile Include="ForTestable\DependencyAssertions.cs" />
+    <Compile Include="ForTestable\ExplicitDependencies.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExplicitDependencies.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ForTestable\ImplicitDependencies.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ImplicitDependencies.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ForTestable\StepArgumentTransformer.cs" />
+    <Compile Include="ForTestable\TestableContext.cs" />
+    <Compile Include="ForTestable\TestableSteps.cs" />
+    <Compile Include="ForTestable\TypeRestriction.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TypeRestriction.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ForTestable\Types\AbstractClass.cs" />
+    <Compile Include="ForTestable\Types\AmbiguousConstructor.cs" />
+    <Compile Include="ForTestable\Types\CannedDependency.cs" />
+    <Compile Include="ForTestable\Types\Dependency.cs" />
+    <Compile Include="ForTestable\Types\DifferentDependency.cs" />
+    <Compile Include="ForTestable\Types\HasMultipleDependencies.cs" />
+    <Compile Include="ForTestable\Types\HasNoExplicitConstructor.cs" />
+    <Compile Include="ForTestable\Types\HasSingleDependency.cs" />
+    <Compile Include="ForTestable\Types\HasStaticConstructor.cs" />
+    <Compile Include="ForTestable\Types\HasTooManyConstructors.cs" />
+    <Compile Include="ForTestable\Types\IDefaultDependency.cs" />
+    <Compile Include="ForTestable\Types\IDependency.cs" />
+    <Compile Include="ForTestable\Types\IUnusedDependency.cs" />
+    <Compile Include="ForTestable\Types\StubDependency.cs" />
+    <Compile Include="ForTestable\Types\UnusedDependency.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="nunit.framework, Version=3.5.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\NUnit.3.5.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="TechTalk.SpecFlow, Version=2.1.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SpecFlow.2.1.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ForTestable\DefaultDependencies.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DefaultDependencies.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ForTestable\ExplicitDependencies.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ExplicitDependencies.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ForTestable\ImplicitDependencies.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ImplicitDependencies.feature.cs</LastGenOutput>
+    </None>
+    <None Include="ForTestable\TypeRestriction.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>TypeRestriction.feature.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Prova\Prova.csproj">
+      <Project>{DE7682A6-224A-402C-88DC-A1B111972A5E}</Project>
+      <Name>Prova</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

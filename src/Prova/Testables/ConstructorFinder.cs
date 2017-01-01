@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Reflection;
 using Prova.Extensions;
-using Prova.Resources;
+//using Prova.Resources;
 
 namespace Prova.Testables
 {
@@ -19,12 +19,12 @@ namespace Prova.Testables
         {
             if (_type.IsAbstract)
             {
-                throw new ArgumentException(string.Format(ExceptionMessages.CanNotBeAnAbstractClass, _type.Name));
+                throw new ArgumentException($"The type [{_type.Name}] is an abstract class.");
             }
             var constructors = _type.GetConstructors().Where(ParameterTypesAreUnique);
             if (!constructors.HasCountOf(1))
             {
-                throw new ArgumentException(string.Format(ExceptionMessages.MustHaveValidConstructor, _type.Name));
+                throw new ArgumentException($"Type [{_type.Name}] must have a valid public constructor with uniquely typed parameters.");
             }
             return constructors.Single();
         }
