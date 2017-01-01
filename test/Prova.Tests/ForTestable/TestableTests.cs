@@ -77,7 +77,7 @@ namespace Prova.Tests.ForTestable
         [Test]
         public void CanProvideTypeAsDefaultDependency()
         {
-            Testable.InstancesOf<SingleDependency>().UseNoDefaults();
+            Testable.InstancesOf<SingleDependency>().UseDefaultOf<StubDependency>();
             Testable.InstancesOf<SingleDependency>().UseDefaultOf<Dependency>();
 
             var testable = new Testable<SingleDependency>();

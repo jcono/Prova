@@ -39,5 +39,10 @@ namespace Prova.Testables
         {
             return parameter.ParameterType;
         }
+
+        public Type Find(Type parameterType)
+        {
+            return _parameters.SingleOrDefault(x => x.IsAssignableFrom(parameterType));
+        }
     }
 }

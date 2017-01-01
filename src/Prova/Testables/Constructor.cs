@@ -34,5 +34,10 @@ namespace Prova.Testables
         {
             return _parameters.HasParameterFor(dependencyType);
         }
+
+        public Type TypeOfParameterFor(Type parameterType)
+        {
+            return _parameters.Find(parameterType);
+        }
     }
 }

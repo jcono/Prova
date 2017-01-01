@@ -29,15 +29,19 @@ namespace Prova.Testables
 
         private void UseDefaultOf<T>(Type parameterType, Func<T> function)
         {
-            new Constructor(_type).MustHaveParameterFor(parameterType);
+            var constructor = new Constructor(_type);
 
-            if (_defaults.ContainsKey(parameterType))
+            constructor.MustHaveParameterFor(parameterType);
+
+            var t = constructor.TypeOfParameterFor(parameterType);
+
+            if (_defaults.ContainsKey(t))
             {
-                _defaults[parameterType] = function;
+                _defaults[t] = function;
             }
             else
             {
-                _defaults.Add(parameterType, function);
+                _defaults.Add(t, function);
             }
         }
 
