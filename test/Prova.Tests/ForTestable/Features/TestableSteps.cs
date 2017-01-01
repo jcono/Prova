@@ -3,7 +3,7 @@ using NUnit.Framework;
 using Prova.Extensions;
 using TechTalk.SpecFlow;
 
-namespace Prova.Tests.ForTestable
+namespace Prova.Tests.ForTestable.Features
 {
     [Binding]
     public class TestableSteps
@@ -16,14 +16,13 @@ namespace Prova.Tests.ForTestable
         }
 
         [Given(@"I create a testable for a (.*)")]
-        [When(@"I create a testable for a (.*)")]
         public void CreateTestableWith(Type type)
         {
             Action action = () =>
             {
                 Testable.InstancesOf(type).UseNoDefaults();
                 _context.Testable = new Testable(type);
-//                _context.Instance = _context.Testable.Create();
+                _context.Instance = _context.Testable.Create();
             };
             _context.Exception = action.GetException();
         }

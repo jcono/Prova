@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TechTalk.SpecFlow;
 
-namespace Prova.Tests.ForTestable
+namespace Prova.Tests.ForTestable.Features
 {
     [Binding]
     public class StepArgumentTransformer

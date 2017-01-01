@@ -34,27 +34,28 @@
     <Compile Include="ForExtensions\ForActionTests.cs" />
     <Compile Include="ForExtensions\ForGenericTests.cs" />
     <Compile Include="ForExtensions\ForIEnumerableTests.cs" />
-    <Compile Include="ForTestable\DefaultDependencies.feature.cs">
+    <Compile Include="ForTestable\TestableTests.cs" />
+    <Compile Include="ForTestable\Features\DefaultDependencies.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DefaultDependencies.feature</DependentUpon>
     </Compile>
-    <Compile Include="ForTestable\DefaultDependenciesSteps.cs" />
-    <Compile Include="ForTestable\DependencyAssertions.cs" />
-    <Compile Include="ForTestable\ExplicitDependencies.feature.cs">
+    <Compile Include="ForTestable\Features\DefaultDependenciesSteps.cs" />
+    <Compile Include="ForTestable\Features\DependencyAssertions.cs" />
+    <Compile Include="ForTestable\Features\ExplicitDependencies.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ExplicitDependencies.feature</DependentUpon>
     </Compile>
-    <Compile Include="ForTestable\ImplicitDependencies.feature.cs">
+    <Compile Include="ForTestable\Features\ImplicitDependencies.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ImplicitDependencies.feature</DependentUpon>
     </Compile>
-    <Compile Include="ForTestable\StepArgumentTransformer.cs" />
-    <Compile Include="ForTestable\TestableContext.cs" />
-    <Compile Include="ForTestable\TestableSteps.cs" />
-    <Compile Include="ForTestable\TypeRestriction.feature.cs">
+    <Compile Include="ForTestable\Features\StepArgumentTransformer.cs" />
+    <Compile Include="ForTestable\Features\TestableContext.cs" />
+    <Compile Include="ForTestable\Features\TestableSteps.cs" />
+    <Compile Include="ForTestable\Features\TypeRestriction.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TypeRestriction.feature</DependentUpon>
@@ -90,19 +91,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ForTestable\DefaultDependencies.feature">
+    <None Include="ForTestable\Features\DefaultDependencies.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>DefaultDependencies.feature.cs</LastGenOutput>
     </None>
-    <None Include="ForTestable\ExplicitDependencies.feature">
+    <None Include="ForTestable\Features\ExplicitDependencies.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ExplicitDependencies.feature.cs</LastGenOutput>
     </None>
-    <None Include="ForTestable\ImplicitDependencies.feature">
+    <None Include="ForTestable\Features\ImplicitDependencies.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>ImplicitDependencies.feature.cs</LastGenOutput>
     </None>
-    <None Include="ForTestable\TypeRestriction.feature">
+    <None Include="ForTestable\Features\TypeRestriction.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>TypeRestriction.feature.cs</LastGenOutput>
     </None>

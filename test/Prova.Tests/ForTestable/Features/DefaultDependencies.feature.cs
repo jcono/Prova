@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Prova.Tests.ForTestable
+namespace Prova.Tests.ForTestable.Features
 {
     using TechTalk.SpecFlow;
     

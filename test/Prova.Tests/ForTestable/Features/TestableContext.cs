@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Prova.Tests.ForTestable
+namespace Prova.Tests.ForTestable.Features
 {
     public class TestableContext
     {

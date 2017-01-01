@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Prova.Extensions;
-//using Rhino.Mocks;
+using Rhino.Mocks;
 
 namespace Prova.Testables
 {
@@ -46,7 +46,7 @@ namespace Prova.Testables
 
         private static dynamic GetMockLibraryInstanceFor(Type type)
         {
-            return null;// MockRepository.GenerateStub(type);
+            return MockRepository.GenerateStub(type);
         }
 
         public dynamic InstanceForType(Type type)

@@ -3,6 +3,19 @@ using Prova.Testables;
 
 namespace Prova
 {
+    public class Testable<T> : Testable
+    {
+        public Testable() : base(typeof(T))
+        {
+        }
+
+        public new T Create()
+        {
+            return base.Create();
+        }
+
+    }
+
     public class Testable
     {
         private readonly Constructor _constructor;

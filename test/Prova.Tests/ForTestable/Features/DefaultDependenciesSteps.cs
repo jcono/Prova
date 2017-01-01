@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using Prova.Tests.ForTestable.Features;
 using Prova.Tests.ForTestable.Types;
 using TechTalk.SpecFlow;
 

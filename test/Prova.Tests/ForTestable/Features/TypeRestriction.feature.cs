@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace Prova.Tests.ForTestable
+namespace Prova.Tests.ForTestable.Features
 {
     using TechTalk.SpecFlow;
     
@@ -72,7 +72,7 @@ namespace Prova.Tests.ForTestable
 #line 6
 this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.When("I create a testable for a type HasStaticConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("I create a testable for a type HasStaticConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
     testRunner.Then("I should have an instance with that has a type HasStaticConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -87,7 +87,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 10
 this.ScenarioSetup(scenarioInfo);
 #line 11
-    testRunner.When("I create a testable for a type HasNoExplicitConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("I create a testable for a type HasNoExplicitConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
     testRunner.Then("I should have an instance with that has a type HasNoExplicitConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -102,7 +102,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 15
-    testRunner.When("I create a testable for a type AbstractClass", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("I create a testable for a type AbstractClass", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 16
     testRunner.Then("I should have seen an exception with a type ArgumentException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -117,7 +117,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 18
 this.ScenarioSetup(scenarioInfo);
 #line 19
-    testRunner.When("I create a testable for a type AmbiguousConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("I create a testable for a type AmbiguousConstructor", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
     testRunner.Then("I should have seen an exception with a type ArgumentException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -132,7 +132,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 22
 this.ScenarioSetup(scenarioInfo);
 #line 23
-    testRunner.When("I create a testable for a type HasTooManyConstructors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("I create a testable for a type HasTooManyConstructors", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 24
     testRunner.Then("I should have seen an exception with a type ArgumentException", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
