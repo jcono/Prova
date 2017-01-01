@@ -34,7 +34,7 @@ namespace Prova
             Type parameterType = TypeOf(dependency);
             if (_constructor.TypeOfParameterFor(parameterType).IsNothing())
             {
-                _constructor.NoMatchingParameterException(parameterType);
+                throw _constructor.Type.HasNoMatchingParameterException(parameterType);
             }
 
             _dependencies.Add(dependency);
@@ -45,12 +45,4 @@ namespace Prova
 
         private static Type TypeOf(dynamic dependency) => dependency.GetType();
     }
-
-    public static class ConstructorExtensions
-    {
-        public static void NoMatchingParameterException(this Constructor constructor, Type parameterType)
-        {
-            throw new ArgumentException($"The constructor of the type [{constructor.Type}] does not contain a dependency assignable from type [{parameterType}]");
-        }
-    }
- }
+}

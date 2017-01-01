@@ -24,7 +24,7 @@ namespace Prova.Testables
         {
             var constructor = new Constructor(_type);
             var parameterType = constructor.TypeOfParameterFor(typeof(T));
-            if (parameterType.IsNothing()) { constructor.NoMatchingParameterException(parameterType); }
+            if (parameterType.IsNothing()) { throw constructor.Type.HasNoMatchingParameterException(parameterType); }
 
             if (_defaults.ContainsKey(parameterType))
             {

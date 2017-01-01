@@ -16,10 +16,10 @@ namespace Prova.Testables
 
         public ConstructorInfo Find()
         {
-            if (_type.IsAbstract) { throw new ArgumentException($"The type [{_type.Name}] is an abstract class."); }
+            if (_type.IsAbstract) { throw _type.IsAbstractException(); }
 
             var constructors = _type.GetConstructors().Where(ParameterTypesAreUnique).ToList();
-            if (!constructors.HasCountOf(1)) { throw new ArgumentException($"Type [{_type.Name}] must have a valid public constructor with uniquely typed parameters."); }
+            if (!constructors.HasCountOf(1)) { throw _type.TooManyConstructorsException(); }
 
             return constructors.Single();
         }
