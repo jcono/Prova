@@ -34,6 +34,7 @@
     <Compile Include="ForExtensions\ForActionTests.cs" />
     <Compile Include="ForExtensions\ForGenericTests.cs" />
     <Compile Include="ForExtensions\ForIEnumerableTests.cs" />
+    <Compile Include="ForTestable\Class1.cs" />
     <Compile Include="ForTestable\TestableTests.cs" />
     <Compile Include="ForTestable\Types\Classes.cs" />
     <Compile Include="ForTestable\Types\HasMultipleDependencies.cs" />
