@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Prova.Tests.ForTestable.Types;
 
 namespace Prova.Tests.ForTestable

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 
 namespace Prova.Tests.ForTestable
@@ -52,23 +46,17 @@ namespace Prova.Tests.ForTestable
         private readonly Expression<Func<T, dynamic>> _expression;
         private dynamic _value;
 
-        public ExpressionWrapper(Expression<Func<T, dynamic>> expression)
-        {
-            _expression = expression;
-        }
+        public ExpressionWrapper(Expression<Func<T, dynamic>> expression) { _expression = expression; }
 
-        public void SetTo(dynamic value)
-        {
-            _value = value;
-        }
+        public void SetTo(dynamic value) { _value = value; }
 
         public void ApplyTo(dynamic instance)
         {
             var memberExpression = _expression.Body as MemberExpression;
 
-            var propertyInfo = memberExpression.Member as PropertyInfo;
+            var propertyInfo = memberExpression?.Member as PropertyInfo;
 
-            propertyInfo.SetValue(instance, _value);
+            propertyInfo?.SetValue(instance, _value);
         }
     }
 }

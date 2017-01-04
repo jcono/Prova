@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Prova.Extensions;
 
 namespace Prova.Testables
 {
@@ -26,14 +25,8 @@ namespace Prova.Testables
             return _constructor.Invoke(UsingArrayOf(parameters));
         }
 
-        private static object[] UsingArrayOf(IEnumerable<object> types)
-        {
-            return types.ToArray();
-        }
+        private static object[] UsingArrayOf(IEnumerable<object> types) => types.ToArray();
 
-        public Type TypeOfParameterFor(Type parameterType)
-        {
-            return _parameters.ParameterTypeMatching(parameterType);
-        }
+        public Type TypeOfParameterFor(Type parameterType) => _parameters.ParameterTypeMatching(parameterType);
     }
 }

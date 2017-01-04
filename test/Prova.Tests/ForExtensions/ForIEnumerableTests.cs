@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics.CodeAnalysis;
+using NUnit.Framework;
 using Prova.Extensions;
 
 namespace Prova.Tests.ForExtensions
@@ -17,6 +18,7 @@ namespace Prova.Tests.ForExtensions
         }
 
         [Test]
+        [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull")]
         public void AreUniqueShouldReturnTrueForNullEnumerable()
         {
             object[] objects = null;
@@ -47,6 +49,7 @@ namespace Prova.Tests.ForExtensions
         }
 
         [Test]
+        [SuppressMessage("ReSharper", "ExpressionIsAlwaysNull")]
         public void HasCountOfShouldReturnFalseForNullEnumerable()
         {
             object[] objects = null;

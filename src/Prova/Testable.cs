@@ -4,32 +4,24 @@ using Prova.Testables;
 
 namespace Prova
 {
-    public class Testable<T> : Testable
+    public static class Testable
     {
-        public Testable() : base(typeof(T)) { }
-
-        public new T Create()
-        {
-            return base.Create();
-        }
+        public static DefaultDependencies InstancesOf<T>() => DefaultDependencyLookup.On(typeof(T));
     }
 
-    public class Testable
+    public class Testable<T>
     {
         private readonly Constructor _constructor;
         private readonly Dependencies _dependencies;
-        private readonly Type _type;
 
-        public Testable(Type type)
+        public Testable()
         {
-            _type = type;
-            _constructor = new Constructor(_type);
-            _dependencies = new Dependencies(_type);
+            _constructor = new Constructor(typeof(T));
+            _dependencies = new Dependencies(typeof(T));
         }
 
-        public static DefaultDependencies InstancesOf<T>() => DefaultDependencyLookup.On(typeof(T));
 
-        public Testable With(dynamic dependency)
+        public dynamic With(dynamic dependency)
         {
             Type parameterType = TypeOf(dependency);
             if (_constructor.TypeOfParameterFor(parameterType).IsNothing())

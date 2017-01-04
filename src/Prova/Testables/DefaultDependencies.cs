@@ -7,24 +7,18 @@ namespace Prova.Testables
 {
     public class DefaultDependencies
     {
-        private readonly Type _type;
         private readonly IDictionary<Type, dynamic> _defaults = new Dictionary<Type, dynamic>();
+        private readonly Type _type;
 
-        internal DefaultDependencies(Type type)
-        {
-            _type = type;
-        }
+        internal DefaultDependencies(Type type) { _type = type; }
 
-        public void UseDefaultOf<T>()
-        {
-            UseDefaultOf(Activator.CreateInstance<T>);
-        }
+        public void UseDefaultOf<T>() { UseDefaultOf(Activator.CreateInstance<T>); }
 
         public void UseDefaultOf<T>(Func<T> function)
         {
             var constructor = new Constructor(_type);
             var parameterType = constructor.TypeOfParameterFor(typeof(T));
-            if (parameterType.IsNothing()) { throw constructor.Type.HasNoMatchingParameterException(parameterType); }
+            if (parameterType.IsNothing()) throw constructor.Type.HasNoMatchingParameterException(parameterType);
 
             if (_defaults.ContainsKey(parameterType))
             {

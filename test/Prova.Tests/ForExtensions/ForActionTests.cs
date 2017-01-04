@@ -18,7 +18,6 @@ namespace Prova.Tests.ForExtensions
             Assert.That(exception, Is.EqualTo(expectedException));
         }
 
-
         [Test]
         public void GetExceptionShouldReturnNullIfActionIsNull()
         {

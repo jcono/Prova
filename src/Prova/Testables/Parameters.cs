@@ -9,35 +9,17 @@ namespace Prova.Testables
     {
         private readonly IEnumerable<Type> _parameters;
 
-        public Parameters(ConstructorInfo constructor)
-        {
-            _parameters = SelectAll(ParametersForThe(constructor), ByParameterType);
-        }
+        public Parameters(ConstructorInfo constructor) { _parameters = SelectAll(ParametersForThe(constructor), ByParameterType); }
 
-        public IEnumerable<dynamic> BuildInstancesUsing(Dependencies dependencies)
-        {
-            return _parameters.Select(dependencies.InstanceForType);
-        }
+        public IEnumerable<dynamic> BuildInstancesUsing(Dependencies dependencies) { return _parameters.Select(dependencies.InstanceForType); }
 
         private static IEnumerable<Type> SelectAll(IEnumerable<ParameterInfo> parametersInformation,
-                                                   Func<ParameterInfo, Type> selector)
-        {
-            return parametersInformation.Select(selector);
-        }
+                                                   Func<ParameterInfo, Type> selector) { return parametersInformation.Select(selector); }
 
-        private static IEnumerable<ParameterInfo> ParametersForThe(ConstructorInfo constructor)
-        {
-            return constructor.GetParameters();
-        }
+        private static IEnumerable<ParameterInfo> ParametersForThe(ConstructorInfo constructor) { return constructor.GetParameters(); }
 
-        private static Type ByParameterType(ParameterInfo parameter)
-        {
-            return parameter.ParameterType;
-        }
+        private static Type ByParameterType(ParameterInfo parameter) { return parameter.ParameterType; }
 
-        public Type ParameterTypeMatching(Type parameterType)
-        {
-            return _parameters.SingleOrDefault(x => x.IsAssignableFrom(parameterType));
-        }
+        public Type ParameterTypeMatching(Type parameterType) { return _parameters.SingleOrDefault(x => x.IsAssignableFrom(parameterType)); }
     }
 }
