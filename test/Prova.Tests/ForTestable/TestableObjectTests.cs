@@ -11,10 +11,10 @@ using NUnit.Framework;
 
 namespace Prova.Tests.ForTestable
 {
-    class Class1
+    public class TestableObjectTests
     {
         [Test]
-        public void Blah()
+        public void CanProvidePropertyValue()
         {
             var t = new TestableObject<MyObject>();
 
